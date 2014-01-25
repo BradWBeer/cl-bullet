@@ -5,6 +5,13 @@
   :description "Describe cl-bullet here"
   :author "Brad Beer (WarWeasle)"
   :license "MIT"
-  :components ((:file "package")
-               (:file "cl-bullet")))
+  :depends-on (#:cffi)
+  :components 
+  ((:module "bindings"
+	    :serial t
+	    :components
+	    ((:file "package")
+	     (:file "bullet-bindings")))
+   (:file "package")
+   (:file "cl-bullet")))
 
