@@ -1,13 +1,12 @@
 (in-package #:cl-bullet-bindings)
 
-(defmacro add-path (name) 
-  (CONCATENATE 'STRING
-	       (DIRECTORY-NAMESTRING
-		(ASDF/SYSTEM:SYSTEM-RELATIVE-PATHNAME :CL-BULLET
-						      "cl-bullet.asd"))
-	       "bindings/"
-	       name))
 
+(push (CONCATENATE 'STRING
+		   (DIRECTORY-NAMESTRING
+		    (ASDF/SYSTEM:SYSTEM-RELATIVE-PATHNAME :CL-BULLET
+							  "cl-bullet.asd"))
+		   "creation_tools/")
+       cffi:*foreign-library-directories*)
 
 (cffi:define-foreign-library :libBulletLinearMath
   (cffi-features:darwin  "libLinearMath.dylib")
@@ -40,9 +39,9 @@
 
 
 (cffi:define-foreign-library :libLispBullet
-  (cffi-features:darwin  (add-path "lispBullet.dylib"))
-  (cffi-features:unix    (add-path "lispBullet.so"))
-  (cffi-features:windows (add-path "lispBullet.dll")))
+  (cffi-features:darwin  "lispBullet.dylib")
+  (cffi-features:unix    "lispBullet.so")
+  (cffi-features:windows "lispBullet.dll"))
 
 (cffi:load-foreign-library :libLispBullet)
   

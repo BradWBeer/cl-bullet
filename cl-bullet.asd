@@ -11,6 +11,7 @@
 	    :serial t
 	    :components
 	    ((:file "package")
+	     (:file "library")
 	     (:file "bullet-bindings")))
    (:file "package")
    (:file "cl-bullet")))

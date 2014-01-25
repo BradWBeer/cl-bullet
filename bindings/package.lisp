@@ -1,7 +1,7 @@
 ;;;; package.lisp
 
 (defpackage #:cl-bullet-bindings
-  (:use #:cffi))
+  (:use #:cffi #:cl))
 
 
 
