@@ -12,7 +12,7 @@
 (defun find-repeated-function-names ()
   (setf *hash* (make-hash-table))
 
-  (alexandria:with-input-from-file (s "/home/bbeer/work/external/swig-bullet/swigbullet.lisp")
+  (alexandria:with-input-from-file (s "~/quicklisp/local-projects/cl-bullet/creation_tools/swigbullet.lisp")
     (loop for sym = (read s nil nil)
 	 while sym
 	 do (when (equal (first sym) 'cffi:defcfun)

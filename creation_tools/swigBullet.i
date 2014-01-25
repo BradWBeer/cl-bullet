@@ -1,6 +1,5 @@
 %module(directors="1") swigbullet
 
-
 %{
 #include <BulletSoftBody/btSoftBody.h>
 #include <BulletSoftBody/btSoftBodyHelpers.h>
@@ -30,6 +29,9 @@ typedef btSoftBody::fCollision fCollision;
 %rename (btVector3_default) btVector3::btVector3();
 %rename (btVector4_default) btVector4::btVector4();
 %rename (btTransform_default) btTransform::btTransform();
+
+%rename (btAngle_from_btVector3s) btAngle(const btVector3& v1, const btVector3& v2);
+%rename (btAngle_from_btQuaternions) btAngle(const btQuaternion& q1, const btQuaternion& q2);
 
 %rename (btMatrix3x3_default) btMatrix3x3::btMatrix3x3();
 %rename (btMatrix3x3_from_btQuaternion) btMatrix3x3::btMatrix3x3(const btQuaternion &q);
@@ -243,3 +245,4 @@ void btSoftBodySetShear(btSoftBody *body, float val) {
 %template(btSparseSdf3) btSparseSdf<3>;
 %array_class(float, floatArray)
 %array_class(btVector3, btVector3Array)
+
