@@ -23,12 +23,45 @@ typedef btSoftBody::fCollision fCollision;
 %ignore btSoftBody::m_cdbvt;
 
 %rename (btlength) length;
-%rename (btdot) dot;
 
+%rename (btDot_btVector3) btDot(const btVector3& v1, const btVector3& v2);
+%rename (btDot_btQuaternion) btDot(const btQuaternion& v1, const btQuaternion& v2);
 
 %rename (btVector3_default) btVector3::btVector3();
 %rename (btVector4_default) btVector4::btVector4();
 %rename (btTransform_default) btTransform::btTransform();
+
+%rename (mult_btVector3_btScalar) btVector3::operator*(btScalar s);
+%rename (mult_btVector3_btVector3) btVector3::operator*(const btVector3& v2);
+
+%rename (mult_btQuaternion_btVector3) btQuaternion::operator*(const btVector3& w);
+%rename (mult_btQuaternion_btQuaternion) btQuaternion::operator*(const btQuaternion& q2);
+%rename (mult_btQuaternion_btScalar) btQuaternion::operator*(btScalar s) const;
+
+%rename (mult_btTransform_btVector3) btTransform::operator*(btScalar v) const;
+%rename (mult_btTransform_btVector3) btTransform::operator*(const btVector3& v) const;
+%rename (mult_btTransform_btQuaternion) btTransform::operator*(const btQuaternion& larg2) const;
+%rename (mult_btTransform_btTransform) btTransform::operator*(const btTransform& larg2) const;
+
+%rename (mult_btMatrix3x3_btMatrix3x3) btMatrix3x3::operator*(const btMatrix3x3& larg2);
+%rename (mult_btMatrix3x3_btVector3) btMatrix3x3::operator*(const btVector3& larg2);
+%rename (mult_btMatrix3x3_btScalar) btMatrix3x3::operator*(btScalar larg2);
+
+%rename (mult_equal_btVector3_btScalar) btVector3::operator*=(btScalar s);
+%rename (mult_equal_btVector3_btVector3) btVector3::operator*=(const btVector3& v2);
+
+%rename (mult_equal_btQuaternion_btVector3) btQuaternion::operator*=(const btVector3& w);
+%rename (mult_equal_btQuaternion_btQuaternion) btQuaternion::operator*=(const btQuaternion& q2);
+%rename (mult_equal_btQuaternion_btScalar) btQuaternion::operator*=(btScalar s) const;
+
+%rename (mult_equal_btTransform_btVector3) btTransform::operator*=(btScalar v) const;
+%rename (mult_equal_btTransform_btVector3) btTransform::operator*=(const btVector3& v) const;
+%rename (mult_equal_btTransform_btQuaternion) btTransform::operator*=(const btQuaternion& larg2) const;
+%rename (mult_equal_btTransform_btTransform) btTransform::operator*=(const btTransform& larg2) const;
+
+%rename (mult_equal_btMatrix3x3_btMatrix3x3) btMatrix3x3::operator*=(const btMatrix3x3& larg2);
+%rename (mult_equal_btMatrix3x3_btVector3) btMatrix3x3::operator*=(const btVector3& larg2);
+%rename (mult_equal_btMatrix3x3_btScalar) btMatrix3x3::operator*=(btScalar larg2);
 
 %rename (btAngle_from_btVector3s) btAngle(const btVector3& v1, const btVector3& v2);
 %rename (btAngle_from_btQuaternions) btAngle(const btQuaternion& q1, const btQuaternion& q2);
@@ -57,6 +90,9 @@ typedef btSoftBody::fCollision fCollision;
 %rename (btQuaternion_from_btVector_and_btScalar) btQuaternion::btQuaternion (const btVector3 &_axis, btScalar_angle);
 %rename (btQuaternion_from_yaw_pitch_and_roll)    btQuaternion::btQuaternion (btScalaryaw, btScalarpitch, btScalarroll);
 
+%rename (getEulerZYX_3) btMatrix3x3::getEulerZYX(btScalar& yaw, btScalar& pitch, btScalar& roll) const;
+%rename (getEulerZYX_4) btMatrix3x3::getEulerZYX(btScalar& yaw, btScalar& pitch, btScalar& roll, unsigned int solution_number) const;
+
 %rename (btRigidBody_from_btRigidBodyConstructionInfo) btRigidBody::btRigidBody (const btRigidBodyConstructionInfo &constructionInfo);
 %rename (btRigidBody_backward_compatible) btRigidBody::btRigidBody (btScalar mass, btMotionState *motionState, btCollisionShape *collisionShape, const btVector3 &localInertia);
  
@@ -69,6 +105,29 @@ typedef btSoftBody::fCollision fCollision;
 %rename (btConvexHullShape_1) btConvexHullShape::btConvexHullShape(const btScalar * points);
 %rename (btConvexHullShape_0) btConvexHullShape::btConvexHullShape();
 			
+
+%rename (unsigned_btSelect) btSelect(unsigned condition, unsigned valueIfConditionNonZero, unsigned valueIfConditionZero);
+%rename (int_btSelect) btSelect(unsigned condition, int valueIfConditionNonZero, int valueIfConditionZero);
+%rename (float_btSelect) btSelect(unsigned condition, float valueIfConditionNonZero, float valueIfConditionZero);
+
+%rename (unsigned_btSwapEndian_to_unsigned) btSwapEndian(unsigned val);
+%rename (unsigned_short_btSwapEndian_to_unsigned_short) btSwapEndian(unsigned short val);
+%rename (int_btSwapEndian_to_unsigned) btSwapEndian(int val);
+%rename (short_btSwapEndian_to_unsigned_short) btSwapEndian(short val);
+
+%rename (const_getBasis) getBasis() const;
+%rename (const_getOrigin) getOrigin() const;
+
+%rename (setValue_3) setValue(btScalar _x, btScalar _y, btScalar _z);
+%rename (setValue_4) setValue(btScalar _x, btScalar _y, btScalar _z,btScalar _w);
+
+%rename (btAngularLimit_set_5) 	btAngularLimit::set(btScalar low, btScalar high, btScalar _softness, btScalar _biasFactor, btScalar _relaxationFactor);
+%rename (btAngularLimit_set_4) 	btAngularLimit::set(btScalar low, btScalar high, btScalar _softness, btScalar _biasFactor);
+%rename (btAngularLimit_set_3) 	btAngularLimit::set(btScalar low, btScalar high, btScalar _softness);
+%rename (btAngularLimit_set_2) 	btAngularLimit::set(btScalar low, btScalar high);
+
+%rename (btMatrix3x3_const) btMatrix3x3::operator[](int i) const;
+%rename (btTransform_funcall) btTransform::operator()(const btVector3& x) const;
 
 
 //btSoftBody nested classes
@@ -176,52 +235,52 @@ struct Node : Feature
 %include "LinearMath/btAlignedObjectArray.h"
 %include "LinearMath/btDefaultMotionState.h"
 
-%include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
-%include "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"
-%include "BulletCollision/BroadphaseCollision/btDbvtBroadphase.h"
-%include "BulletCollision/BroadphaseCollision/btDispatcher.h"
+/* %include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h" */
+/* %include "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h" */
+/* %include "BulletCollision/BroadphaseCollision/btDbvtBroadphase.h" */
+/* %include "BulletCollision/BroadphaseCollision/btDispatcher.h" */
 
-%include "BulletCollision/CollisionDispatch/btCollisionConfiguration.h"
-%include "BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h"
-%include "BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
-%include "BulletCollision/CollisionDispatch/btCollisionObject.h"
-%include "BulletCollision/CollisionDispatch/btCollisionWorld.h"
+/* %include "BulletCollision/CollisionDispatch/btCollisionConfiguration.h" */
+/* %include "BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h" */
+/* %include "BulletCollision/CollisionDispatch/btCollisionDispatcher.h" */
+/* %include "BulletCollision/CollisionDispatch/btCollisionObject.h" */
+/* %include "BulletCollision/CollisionDispatch/btCollisionWorld.h" */
 
-%include "BulletCollision/CollisionShapes/btCollisionShape.h"
-%include "BulletCollision/CollisionShapes/btConvexShape.h"
-%include "BulletCollision/CollisionShapes/btConvexInternalShape.h"
-%include "BulletCollision/CollisionShapes/btPolyhedralConvexShape.h"
-%include "BulletCollision/CollisionShapes/btConvexHullShape.h"
-%include "BulletCollision/CollisionShapes/btSphereShape.h"
-%include "BulletCollision/CollisionShapes/btMultiSphereShape.h"
-%include "BulletCollision/CollisionShapes/btConcaveShape.h"
-%include "BulletCollision/CollisionShapes/btStaticPlaneShape.h"
-%include "BulletCollision/CollisionShapes/btBoxShape.h"
+/* %include "BulletCollision/CollisionShapes/btCollisionShape.h" */
+/* %include "BulletCollision/CollisionShapes/btConvexShape.h" */
+/* %include "BulletCollision/CollisionShapes/btConvexInternalShape.h" */
+/* %include "BulletCollision/CollisionShapes/btPolyhedralConvexShape.h" */
+/* %include "BulletCollision/CollisionShapes/btConvexHullShape.h" */
+/* %include "BulletCollision/CollisionShapes/btSphereShape.h" */
+/* %include "BulletCollision/CollisionShapes/btMultiSphereShape.h" */
+/* %include "BulletCollision/CollisionShapes/btConcaveShape.h" */
+/* %include "BulletCollision/CollisionShapes/btStaticPlaneShape.h" */
+/* %include "BulletCollision/CollisionShapes/btBoxShape.h" */
 
-%include "BulletDynamics/Dynamics/btDynamicsWorld.h"
-%include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h"
-%include "BulletDynamics/Dynamics/btSimpleDynamicsWorld.h"
-%include "BulletDynamics/Dynamics/btRigidBody.h"
+/* %include "BulletDynamics/Dynamics/btDynamicsWorld.h" */
+/* %include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h" */
+/* %include "BulletDynamics/Dynamics/btSimpleDynamicsWorld.h" */
+/* %include "BulletDynamics/Dynamics/btRigidBody.h" */
 
-%include "BulletDynamics/ConstraintSolver/btConstraintSolver.h"
-%include "BulletDynamics/ConstraintSolver/btTypedConstraint.h"
-%include "BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h"
-%include "BulletDynamics/ConstraintSolver/btHingeConstraint.h"
-%include "BulletDynamics/ConstraintSolver/btConeTwistConstraint.h"
-%include "BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h"
-%include "BulletDynamics/ConstraintSolver/btSliderConstraint.h"
-%include "BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h"
-%include "BulletDynamics/ConstraintSolver/btUniversalConstraint.h"
-%include "BulletDynamics/ConstraintSolver/btHinge2Constraint.h"
-%include "BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h"
+/* %include "BulletDynamics/ConstraintSolver/btConstraintSolver.h" */
+/* %include "BulletDynamics/ConstraintSolver/btTypedConstraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btHingeConstraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btConeTwistConstraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btSliderConstraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btUniversalConstraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btHinge2Constraint.h" */
+/* %include "BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h" */
 
 %include "BulletSoftBody/btSparseSDF.h"
-%include "BulletSoftBody/btSoftBody.h"
-%include "BulletSoftBody/btSoftRigidDynamicsWorld.h"
-%include "BulletSoftBody/btSoftBodySolvers.h"
-%include "BulletSoftBody/btDefaultSoftBodySolver.h"
-%include "BulletSoftBody/btSoftBodyHelpers.h"
-%include "BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h"
+/* %include "BulletSoftBody/btSoftBody.h" */
+/* %include "BulletSoftBody/btSoftRigidDynamicsWorld.h" */
+/* %include "BulletSoftBody/btSoftBodySolvers.h" */
+/* %include "BulletSoftBody/btDefaultSoftBodySolver.h" */
+/* %include "BulletSoftBody/btSoftBodyHelpers.h" */
+/* %include "BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h" */
 
 %inline %{
 const btVector3& btSoftBodyGetNodePosition(const btSoftBody *body, int n) {
