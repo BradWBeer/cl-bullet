@@ -84,11 +84,9 @@ typedef btSoftBody::fCollision fCollision;
 %rename (btTransform_from_btTransform) btTransform::btTransform(const btTransform &other);
 
 %rename (btQuaternion_default) btQuaternion::btQuaternion();
-%rename (btQuaternion_from_4btScalars) btQuaternion::btQuaternion (btScalar x, btScalar y, btScalar z, btScalar w);
-%rename (btQuaternion_from_3btScalars) btQuaternion::btQuaternion (btScalar x, btScalar y, btScalar z);
-%rename (btQuaternion_from_2btScalars) btQuaternion::btQuaternion (btScalar x, btScalar y);
-%rename (btQuaternion_from_btVector_and_btScalar) btQuaternion::btQuaternion (const btVector3 &_axis, btScalar_angle);
-%rename (btQuaternion_from_yaw_pitch_and_roll)    btQuaternion::btQuaternion (btScalaryaw, btScalarpitch, btScalarroll);
+%rename (btQuaternion_from_4btScalars) btQuaternion::btQuaternion(const btScalar& _x, const btScalar& _y, const btScalar& _z, const btScalar& _w);
+%rename (btQuaternion_from_btVector_and_btScalar) btQuaternion::btQuaternion(const btVector3& _axis, const btScalar& _angle);
+%rename (btQuaternion_from_yaw_pitch_and_roll)    btQuaternion::btQuaternion(const btScalar& yaw, const btScalar& pitch, const btScalar& roll);
 
 %rename (getEulerZYX_3) btMatrix3x3::getEulerZYX(btScalar& yaw, btScalar& pitch, btScalar& roll) const;
 %rename (getEulerZYX_4) btMatrix3x3::getEulerZYX(btScalar& yaw, btScalar& pitch, btScalar& roll, unsigned int solution_number) const;
@@ -129,6 +127,15 @@ typedef btSoftBody::fCollision fCollision;
 %rename (btMatrix3x3_const) btMatrix3x3::operator[](int i) const;
 %rename (btTransform_funcall) btTransform::operator()(const btVector3& x) const;
 
+%rename (btDefaultCollisionConfiguration_0) btDefaultCollisionConfiguration::btDefaultCollisionConfiguration();
+%rename (btDefaultCollisionConfiguration_1) btDefaultCollisionConfiguration::btDefaultCollisionConfiguration(const btDefaultCollisionConstructionInfo & constructionInfo); 	
+
+%rename (btDefaultMotionState_default_0) 	btDefaultMotionState::btDefaultMotionState();
+%rename (btDefaultMotionState_default_1) 	btDefaultMotionState::btDefaultMotionState(const btTransform& startTrans);
+%rename (btDefaultMotionState_default_2) 	btDefaultMotionState::btDefaultMotionState(const btTransform& startTrans,const btTransform& centerOfMassOffset);
+
+
+%rename (btDbvtBroadphase_paircache) btDbvtBroadphase (btOverlappingPairCache *paircache);
 
 //btSoftBody nested classes
 struct Element
@@ -236,43 +243,43 @@ struct Node : Feature
 %include "LinearMath/btDefaultMotionState.h"
 
 /* %include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h" */
-/* %include "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h" */
-/* %include "BulletCollision/BroadphaseCollision/btDbvtBroadphase.h" */
+%include "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h" 
+%include "BulletCollision/BroadphaseCollision/btDbvtBroadphase.h" 
 /* %include "BulletCollision/BroadphaseCollision/btDispatcher.h" */
 
-/* %include "BulletCollision/CollisionDispatch/btCollisionConfiguration.h" */
-/* %include "BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h" */
-/* %include "BulletCollision/CollisionDispatch/btCollisionDispatcher.h" */
-/* %include "BulletCollision/CollisionDispatch/btCollisionObject.h" */
-/* %include "BulletCollision/CollisionDispatch/btCollisionWorld.h" */
+%include "BulletCollision/CollisionDispatch/btCollisionConfiguration.h"
+%include "BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h"
+%include "BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
+%include "BulletCollision/CollisionDispatch/btCollisionObject.h"
+%include "BulletCollision/CollisionDispatch/btCollisionWorld.h"
 
-/* %include "BulletCollision/CollisionShapes/btCollisionShape.h" */
-/* %include "BulletCollision/CollisionShapes/btConvexShape.h" */
-/* %include "BulletCollision/CollisionShapes/btConvexInternalShape.h" */
-/* %include "BulletCollision/CollisionShapes/btPolyhedralConvexShape.h" */
-/* %include "BulletCollision/CollisionShapes/btConvexHullShape.h" */
-/* %include "BulletCollision/CollisionShapes/btSphereShape.h" */
-/* %include "BulletCollision/CollisionShapes/btMultiSphereShape.h" */
-/* %include "BulletCollision/CollisionShapes/btConcaveShape.h" */
-/* %include "BulletCollision/CollisionShapes/btStaticPlaneShape.h" */
-/* %include "BulletCollision/CollisionShapes/btBoxShape.h" */
+%include "BulletCollision/CollisionShapes/btCollisionShape.h"
+%include "BulletCollision/CollisionShapes/btConvexShape.h"
+%include "BulletCollision/CollisionShapes/btConvexInternalShape.h"
+%include "BulletCollision/CollisionShapes/btPolyhedralConvexShape.h"
+%include "BulletCollision/CollisionShapes/btConvexHullShape.h"
+%include "BulletCollision/CollisionShapes/btSphereShape.h"
+%include "BulletCollision/CollisionShapes/btMultiSphereShape.h"
+%include "BulletCollision/CollisionShapes/btConcaveShape.h"
+%include "BulletCollision/CollisionShapes/btStaticPlaneShape.h"
+%include "BulletCollision/CollisionShapes/btBoxShape.h"
 
-/* %include "BulletDynamics/Dynamics/btDynamicsWorld.h" */
-/* %include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h" */
-/* %include "BulletDynamics/Dynamics/btSimpleDynamicsWorld.h" */
-/* %include "BulletDynamics/Dynamics/btRigidBody.h" */
+%include "BulletDynamics/Dynamics/btDynamicsWorld.h" 
+%include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h" 
+%include "BulletDynamics/Dynamics/btSimpleDynamicsWorld.h"
+%include "BulletDynamics/Dynamics/btRigidBody.h"
 
-/* %include "BulletDynamics/ConstraintSolver/btConstraintSolver.h" */
-/* %include "BulletDynamics/ConstraintSolver/btTypedConstraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btHingeConstraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btConeTwistConstraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btSliderConstraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btUniversalConstraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btHinge2Constraint.h" */
-/* %include "BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h" */
+%include "BulletDynamics/ConstraintSolver/btConstraintSolver.h"
+%include "BulletDynamics/ConstraintSolver/btTypedConstraint.h"
+%include "BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h"
+%include "BulletDynamics/ConstraintSolver/btHingeConstraint.h"
+%include "BulletDynamics/ConstraintSolver/btConeTwistConstraint.h"
+%include "BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h"
+%include "BulletDynamics/ConstraintSolver/btSliderConstraint.h"
+%include "BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h"
+%include "BulletDynamics/ConstraintSolver/btUniversalConstraint.h"
+%include "BulletDynamics/ConstraintSolver/btHinge2Constraint.h"
+%include "BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h"
 
 %include "BulletSoftBody/btSparseSDF.h"
 /* %include "BulletSoftBody/btSoftBody.h" */
