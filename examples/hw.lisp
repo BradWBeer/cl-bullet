@@ -11,7 +11,11 @@
 				   :constraintSolver solver
 				   :collisionConfiguration collision-Configuration))
      (Ground-Shape nil)
-     (Fall-Shape   nil))
+     (Fall-Shape   nil)
+     (Ground-Motion-State nil)
+     (ground-rigid-body-construction-info)
+     (ground-rigid-body))
+  
 
   
   
@@ -28,11 +32,17 @@
        (vector     (make-instance 'cl-bullet::Vector3 :x 0 :y -1 :z 0))
        (transform  (make-instance 'cl-bullet::Transform
 				  :quaternion quaternion
-				  :vector vector))
-       (groundMotionState (make-instance 'cl-bullet::Default-Motion-State :start transform)))
+				  :vector vector)))
+    (setf Ground-Motion-State (make-instance 'cl-bullet::Default-Motion-State :start transform)))
+  
+  (setf ground-rigid-body-construction-info
+	(make-instance 'cl-bullet::rigid-body-construction-info
+		       :mass 0
+		       :motion-state  Ground-Motion-State
+		       :collision-shape Ground-Shape))
+  
+  (setf ground-rigid-body (make-instance 'cl-bullet::Rigid-Body :construction-info ground-rigid-body-construction-info))
 
-    (print groundMotionState))
 
-      
-
+  (print ground-rigid-body)
   )

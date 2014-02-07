@@ -3742,6 +3742,139 @@
 	(m_additionalDamping :int)
 	(m_padding :pointer))
 
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_mass_set" btRigidBodyConstructionInfo_m_mass_set) :void
+  (self :pointer)
+  (m_mass :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_mass_get" btRigidBodyConstructionInfo_m_mass_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_motionState_set" btRigidBodyConstructionInfo_m_motionState_set) :void
+  (self :pointer)
+  (m_motionState :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_motionState_get" btRigidBodyConstructionInfo_m_motionState_get) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_startWorldTransform_set" btRigidBodyConstructionInfo_m_startWorldTransform_set) :void
+  (self :pointer)
+  (m_startWorldTransform :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_startWorldTransform_get" btRigidBodyConstructionInfo_m_startWorldTransform_get) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_collisionShape_set" btRigidBodyConstructionInfo_m_collisionShape_set) :void
+  (self :pointer)
+  (m_collisionShape :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_collisionShape_get" btRigidBodyConstructionInfo_m_collisionShape_get) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_localInertia_set" btRigidBodyConstructionInfo_m_localInertia_set) :void
+  (self :pointer)
+  (m_localInertia :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_localInertia_get" btRigidBodyConstructionInfo_m_localInertia_get) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_linearDamping_set" btRigidBodyConstructionInfo_m_linearDamping_set) :void
+  (self :pointer)
+  (m_linearDamping :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_linearDamping_get" btRigidBodyConstructionInfo_m_linearDamping_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_angularDamping_set" btRigidBodyConstructionInfo_m_angularDamping_set) :void
+  (self :pointer)
+  (m_angularDamping :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_angularDamping_get" btRigidBodyConstructionInfo_m_angularDamping_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_friction_set" btRigidBodyConstructionInfo_m_friction_set) :void
+  (self :pointer)
+  (m_friction :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_friction_get" btRigidBodyConstructionInfo_m_friction_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_rollingFriction_set" btRigidBodyConstructionInfo_m_rollingFriction_set) :void
+  (self :pointer)
+  (m_rollingFriction :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_rollingFriction_get" btRigidBodyConstructionInfo_m_rollingFriction_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_restitution_set" btRigidBodyConstructionInfo_m_restitution_set) :void
+  (self :pointer)
+  (m_restitution :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_restitution_get" btRigidBodyConstructionInfo_m_restitution_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_linearSleepingThreshold_set" btRigidBodyConstructionInfo_m_linearSleepingThreshold_set) :void
+  (self :pointer)
+  (m_linearSleepingThreshold :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_linearSleepingThreshold_get" btRigidBodyConstructionInfo_m_linearSleepingThreshold_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_angularSleepingThreshold_set" btRigidBodyConstructionInfo_m_angularSleepingThreshold_set) :void
+  (self :pointer)
+  (m_angularSleepingThreshold :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_angularSleepingThreshold_get" btRigidBodyConstructionInfo_m_angularSleepingThreshold_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalDamping_set" btRigidBodyConstructionInfo_m_additionalDamping_set) :void
+  (self :pointer)
+  (m_additionalDamping :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalDamping_get" btRigidBodyConstructionInfo_m_additionalDamping_get) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalDampingFactor_set" btRigidBodyConstructionInfo_m_additionalDampingFactor_set) :void
+  (self :pointer)
+  (m_additionalDampingFactor :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalDampingFactor_get" btRigidBodyConstructionInfo_m_additionalDampingFactor_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalLinearDampingThresholdSqr_set" btRigidBodyConstructionInfo_m_additionalLinearDampingThresholdSqr_set) :void
+  (self :pointer)
+  (m_additionalLinearDampingThresholdSqr :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalLinearDampingThresholdSqr_get" btRigidBodyConstructionInfo_m_additionalLinearDampingThresholdSqr_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalAngularDampingThresholdSqr_set" btRigidBodyConstructionInfo_m_additionalAngularDampingThresholdSqr_set) :void
+  (self :pointer)
+  (m_additionalAngularDampingThresholdSqr :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalAngularDampingThresholdSqr_get" btRigidBodyConstructionInfo_m_additionalAngularDampingThresholdSqr_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalAngularDampingFactor_set" btRigidBodyConstructionInfo_m_additionalAngularDampingFactor_set) :void
+  (self :pointer)
+  (m_additionalAngularDampingFactor :float))
+
+(cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_additionalAngularDampingFactor_get" btRigidBodyConstructionInfo_m_additionalAngularDampingFactor_get) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_new_btRigidBodyConstructionInfo_4" new_btRigidBodyConstructionInfo_4) :pointer
+  (mass :float)
+  (motionState :pointer)
+  (collisionShape :pointer)
+  (localInertia :pointer))
+
+(cffi:defcfun ("_wrap_new_btRigidBodyConstructionInfo_3" new_btRigidBodyConstructionInfo_3) :pointer
+  (mass :float)
+  (motionState :pointer)
+  (collisionShape :pointer))
+
+(cffi:defcfun ("_wrap_delete_btRigidBodyConstructionInfo" delete_btRigidBodyConstructionInfo) :void
+  (self :pointer))
+
 (cffi:defcenum btConstraintSolverType
 	(:BT_SEQUENTIAL_IMPULSE_SOLVER #.1)
 	(:BT_MLCP_SOLVER #.2))
@@ -5837,6 +5970,19 @@
 
 (cffi:defcfun ("_wrap_btSequentialImpulseConstraintSolver_getSolverType" btSequentialImpulseConstraintSolver_getSolverType) btConstraintSolverType
   (self :pointer))
+
+(cffi:defcfun ("_wrap_new_btSoftBodyRigidBodyCollisionConfiguration__SWIG_0" new_btSoftBodyRigidBodyCollisionConfiguration) :pointer
+  (constructionInfo :pointer))
+
+(cffi:defcfun ("_wrap_new_btSoftBodyRigidBodyCollisionConfiguration__SWIG_1" new_btSoftBodyRigidBodyCollisionConfiguration) :pointer)
+
+(cffi:defcfun ("_wrap_delete_btSoftBodyRigidBodyCollisionConfiguration" delete_btSoftBodyRigidBodyCollisionConfiguration) :void
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSoftBodyRigidBodyCollisionConfiguration_getCollisionAlgorithmCreateFunc" btSoftBodyRigidBodyCollisionConfiguration_getCollisionAlgorithmCreateFunc) :pointer
+  (self :pointer)
+  (proxyType0 :int)
+  (proxyType1 :int))
 
 (cffi:defcfun ("_wrap_btSoftBodyGetNodePosition" btSoftBodyGetNodePosition) :pointer
   (body :pointer)

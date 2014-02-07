@@ -57,6 +57,8 @@
 
 (defclass Rigid-Body (Collision-Object) ())
 
+(defclass Rigid-Body-Construction-Info (c-class) ())
+
 (defclass Overlapping-Pair-Callback (c-class) ())
 
 (defclass Overlapping-Pair-Cache (Overlapping-Pair-Callback) ())
@@ -349,3 +351,54 @@
 (cl:defmethod destroy ((this Default-Motion-State) &key)
   (cl-bullet-bindings::delete_btSphereShape (slot-value this 'ff-pointer))
   (setf (slot-value this 'ff-pointer) nil))
+
+
+(cl:defmethod initialize-instance :after ((this Rigid-Body) &key construction-info mass motion-state collision-shape local-inertia)
+  (unless (slot-value this 'ff-pointer)
+
+    (cond (construction-info (setf (slot-value this 'ff-pointer) (cl-bullet-bindings::new_btRigidBody_from_btRigidBodyConstructionInfo (slot-value construction-info 'ff-pointer))))
+	  
+	  ((and mass motion-state collision-shape local-inertia) (setf
+								  (slot-value this 'ff-pointer)
+								  (cl-bullet-bindings::new_btRigidBody_backward_compatible mass
+												       (slot-value motion-state 'ff-pointer)
+												       (slot-value collision-shape 'ff-pointer)
+												       (slot-value local-inertia 'ff-pointer))))
+	  
+	  ((and mass motion-state collision-shape) (setf
+						    (slot-value this 'ff-pointer)
+						    (cl-bullet-bindings::new_btRigidBody mass
+								     (slot-value motion-state 'ff-pointer)
+								     (slot-value collision-shape 'ff-pointer))))
+	  (t (error "Could not create Rigid-Body!")))))
+
+
+(cl:defmethod destroy ((this Rigid-Body) &key)
+  (cl-bullet-bindings::delete_btRigidBody (slot-value this 'ff-pointer))
+  (setf (slot-value this 'ff-pointer) nil))
+
+
+(cl:defmethod initialize-instance :after ((this Rigid-Body-Construction-Info) &key mass motion-State collision-Shape local-Inertia)
+  (unless (slot-value this 'ff-pointer)
+    
+    (if local-inertia
+	(setf (slot-value this 'ff-pointer) 
+	      (cl-bullet-bindings::new_btRigidBodyConstructionInfo_4 
+	       (float mass)
+	       (slot-value motion-state 'ff-pointer)
+	       (slot-value collision-shape 'ff-pointer)
+	       (slot-value local-inertia 'ff-pointer)))
+	(setf (slot-value this 'ff-pointer) 
+	      (cl-bullet-bindings::new_btRigidBodyConstructionInfo_3
+	       (float mass)
+	       (slot-value motion-state 'ff-pointer)
+	       (slot-value collision-shape 'ff-pointer))))))
+
+
+(cl:defmethod destroy ((this Rigid-Body-Construction-Info) &key)
+  (cl-bullet-bindings::delete_btRigidBodyConstructionInfo (slot-value this 'ff-pointer))
+  (setf (slot-value this 'ff-pointer) nil))
+
+
+
+
