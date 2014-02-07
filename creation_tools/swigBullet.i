@@ -15,7 +15,9 @@ typedef btSoftBody::Material Material;
 typedef btSoftBody::Feature Feature;
 typedef btSoftBody::Config Config;
 typedef btSoftBody::Node Node;
-typedef btSoftBody::fCollision fCollision;
+ typedef btSoftBody::fCollision fCollision;
+  typedef btRigidBody::btRigidBodyConstructionInfo btRigidBodyConstructionInfo;
+  
 %}
 
 %ignore btSoftBody::m_fdbvt;
@@ -134,8 +136,12 @@ typedef btSoftBody::fCollision fCollision;
 %rename (btDefaultMotionState_default_1) 	btDefaultMotionState::btDefaultMotionState(const btTransform& startTrans);
 %rename (btDefaultMotionState_default_2) 	btDefaultMotionState::btDefaultMotionState(const btTransform& startTrans,const btTransform& centerOfMassOffset);
 
-
 %rename (btDbvtBroadphase_paircache) btDbvtBroadphase (btOverlappingPairCache *paircache);
+
+%rename (btRigidBodyConstructionInfo_4) btRigidBodyConstructionInfo::btRigidBodyConstructionInfo(btScalar mass, btMotionState* motionState, btCollisionShape* collisionShape, const btVector3& localInertia);
+
+%rename (btRigidBodyConstructionInfo_3) btRigidBodyConstructionInfo::btRigidBodyConstructionInfo(btScalar mass, btMotionState* motionState, btCollisionShape* collisionShape);
+
 
 //btSoftBody nested classes
 struct Element
@@ -269,6 +275,65 @@ struct Node : Feature
 %include "BulletDynamics/Dynamics/btSimpleDynamicsWorld.h"
 %include "BulletDynamics/Dynamics/btRigidBody.h"
 
+class	btRigidBodyConstructionInfo
+{
+ public:
+  btScalar			m_mass;
+
+  ///When a motionState is provided, the rigid body will initialize its world transform from the motion state
+  ///In this case, m_startWorldTransform is ignored.
+  btMotionState*		m_motionState;
+  btTransform	m_startWorldTransform;
+
+  btCollisionShape*	m_collisionShape;
+  btVector3			m_localInertia;
+  btScalar			m_linearDamping;
+  btScalar			m_angularDamping;
+
+  ///best simulation results when friction is non-zero
+  btScalar			m_friction;
+  ///the m_rollingFriction prevents rounded shapes, such as spheres, cylinders and capsules from rolling forever.
+  ///See Bullet/Demos/RollingFrictionDemo for usage
+  btScalar			m_rollingFriction;
+  ///best simulation results using zero restitution.
+  btScalar			m_restitution;
+
+  btScalar			m_linearSleepingThreshold;
+  btScalar			m_angularSleepingThreshold;
+
+  //Additional damping can help avoiding lowpass jitter motion, help stability for ragdolls etc.
+  //Such damping is undesirable, so once the overall simulation quality of the rigid body dynamics system has improved, this should become obsolete
+  bool				m_additionalDamping;
+  btScalar			m_additionalDampingFactor;
+  btScalar			m_additionalLinearDampingThresholdSqr;
+  btScalar			m_additionalAngularDampingThresholdSqr;
+  btScalar			m_additionalAngularDampingFactor;
+
+btRigidBodyConstructionInfo(	btScalar mass, btMotionState* motionState, btCollisionShape* collisionShape, const btVector3& localInertia=btVector3(0,0,0)):
+  m_mass(mass),
+    m_motionState(motionState),
+    m_collisionShape(collisionShape),
+    m_localInertia(localInertia),
+    m_linearDamping(btScalar(0.)),
+    m_angularDamping(btScalar(0.)),
+    m_friction(btScalar(0.5)),
+    m_rollingFriction(btScalar(0)),
+    m_restitution(btScalar(0.)),
+    m_linearSleepingThreshold(btScalar(0.8)),
+    m_angularSleepingThreshold(btScalar(1.f)),
+    m_additionalDamping(false),
+    m_additionalDampingFactor(btScalar(0.005)),
+    m_additionalLinearDampingThresholdSqr(btScalar(0.01)),
+    m_additionalAngularDampingThresholdSqr(btScalar(0.01)),
+    m_additionalAngularDampingFactor(btScalar(0.01))
+  {
+    m_startWorldTransform.setIdentity();
+  }
+};
+
+
+
+
 %include "BulletDynamics/ConstraintSolver/btConstraintSolver.h"
 %include "BulletDynamics/ConstraintSolver/btTypedConstraint.h"
 %include "BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h"
@@ -287,7 +352,7 @@ struct Node : Feature
 /* %include "BulletSoftBody/btSoftBodySolvers.h" */
 /* %include "BulletSoftBody/btDefaultSoftBodySolver.h" */
 /* %include "BulletSoftBody/btSoftBodyHelpers.h" */
-/* %include "BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h" */
+%include "BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h"
 
 %inline %{
 const btVector3& btSoftBodyGetNodePosition(const btSoftBody *body, int n) {
@@ -306,6 +371,7 @@ void btSoftBodySetShear(btSoftBody *body, float val) {
 	body->m_materials[0]->m_kAST = val;
 }
 %}
+
 
 
 %template(btSparseSdf3) btSparseSdf<3>;
