@@ -142,6 +142,14 @@ typedef btSoftBody::Node Node;
 
 %rename (btRigidBodyConstructionInfo_3) btRigidBodyConstructionInfo::btRigidBodyConstructionInfo(btScalar mass, btMotionState* motionState, btCollisionShape* collisionShape);
 
+%rename (addRigidBody) btDiscreteDynamicsWorld::addRigidBody (btRigidBody *body);
+%rename (addRigidBodyWithMask) btDiscreteDynamicsWorld::addRigidBody (btRigidBody *body, short group, short mask);
+
+%rename (stepSimulation3) btDiscreteDynamicsWorld::stepSimulation(btScalar timeStep, int maxSubSteps, btScalar fixedTimeStep);
+%rename (stepSimulation2) btDiscreteDynamicsWorld::stepSimulation(btScalar timeStep, int maxSubSteps);
+%rename (stepSimulation1) btDiscreteDynamicsWorld::stepSimulation(btScalar timeStep);
+
+
 
 //btSoftBody nested classes
 struct Element

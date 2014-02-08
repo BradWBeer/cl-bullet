@@ -3138,18 +3138,18 @@
 (cffi:defcfun ("_wrap_delete_btDiscreteDynamicsWorld" delete_btDiscreteDynamicsWorld) :void
   (self :pointer))
 
-(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_stepSimulation__SWIG_0" btDiscreteDynamicsWorld_stepSimulation) :int
+(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_stepSimulation3" btDiscreteDynamicsWorld_stepSimulation3) :int
   (self :pointer)
   (timeStep :float)
   (maxSubSteps :int)
   (fixedTimeStep :float))
 
-(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_stepSimulation__SWIG_1" btDiscreteDynamicsWorld_stepSimulation) :int
+(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_stepSimulation2" btDiscreteDynamicsWorld_stepSimulation2) :int
   (self :pointer)
   (timeStep :float)
   (maxSubSteps :int))
 
-(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_stepSimulation__SWIG_2" btDiscreteDynamicsWorld_stepSimulation) :int
+(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_stepSimulation1" btDiscreteDynamicsWorld_stepSimulation1) :int
   (self :pointer)
   (timeStep :float))
 
@@ -3212,11 +3212,11 @@
   (self :pointer)
   (collisionObject :pointer))
 
-(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_addRigidBody__SWIG_0" btDiscreteDynamicsWorld_addRigidBody) :void
+(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_addRigidBody" btDiscreteDynamicsWorld_addRigidBody) :void
   (self :pointer)
   (body :pointer))
 
-(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_addRigidBody__SWIG_1" btDiscreteDynamicsWorld_addRigidBody) :void
+(cffi:defcfun ("_wrap_btDiscreteDynamicsWorld_addRigidBodyWithMask" btDiscreteDynamicsWorld_addRigidBodyWithMask) :void
   (self :pointer)
   (body :pointer)
   (group :short)

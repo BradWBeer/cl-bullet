@@ -2,7 +2,7 @@
 
 (in-package #:cl-bullet)
 
-(defmacro bullet-let ((&rest objects) &body body)
+(defmacro with-destroy ((&rest objects) &body body)
   `(let ,objects
      (unwind-protect 
 	  (progn ,@body)
@@ -10,7 +10,7 @@
 	 ,@(loop for (name . val) in (reverse objects)
 	      collect `(cl-bullet::destroy ,name))))))
 
-(defmacro bullet-let* ((&rest objects) &body body)
+(defmacro with-destroy* ((&rest objects) &body body)
   `(let* ,objects
      (unwind-protect 
 	  (progn ,@body)
@@ -138,6 +138,36 @@
       
       (setf (slot-value this 'ff-pointer) (cl-bullet-bindings::new_btVector3 xx yy zz)))))
 
+
+(cl:defmethod get-x ((this vector3))
+  (cffi:mem-ref 
+   (cl-bullet-bindings::btVector3_getx (slot-value this 'ff-pointer))
+   :float))
+
+(cl:defmethod get-y ((this vector3))
+  (cffi:mem-ref 
+   (cl-bullet-bindings::btVector3_gety (slot-value this 'ff-pointer))
+   :float))
+
+(cl:defmethod get-z ((this vector3))
+  (cffi:mem-ref 
+   (cl-bullet-bindings::btVector3_getz (slot-value this 'ff-pointer))
+   :float))
+
+
+;; (cffi:defcfun ("_wrap_btVector3_setX" btVector3_setX) :void
+;;   (self :pointer)
+;;   (_x :float))
+
+;; (cffi:defcfun ("_wrap_btVector3_setY" btVector3_setY) :void
+;;   (self :pointer)
+;;   (_y :float))
+
+;; (cffi:defcfun ("_wrap_btVector3_setZ" btVector3_setZ) :void
+;;   (self :pointer)
+;;   (_z :float))
+
+
 (cl:defmethod destroy ((this vector3) &key)
   (cl-bullet-bindings::delete_btVector3 (slot-value this 'ff-pointer)))
 
@@ -234,7 +264,31 @@
 (cl:defmethod get-gravity ((this Discrete-Dynamics-World))
   (make-instance 'cl-bullet::vector3
 		 :ff-pointer (cl-bullet-bindings::btDiscreteDynamicsWorld_getGravity (slot-value this 'ff-pointer))))
-							  
+
+(cl:defmethod Add-Rigid-Body ((this Discrete-Dynamics-World) (rb Rigid-Body))
+  (cl-bullet-bindings::btDiscreteDynamicsWorld_addRigidBody  (slot-value this 'ff-pointer)
+							     (slot-value rb   'ff-pointer)))
+
+(cl:defmethod Add-Rigid-Body-With-Mask ((this Discrete-Dynamics-World) (rb Rigid-Body) (group integer) (mask integer))
+  (cl-bullet-bindings::btDiscreteDynamicsWorld_addRigidBodyWithMask  (slot-value this 'ff-pointer)
+								     (slot-value rb   'ff-pointer)
+								     group
+								     mask))
+
+(cl:defmethod step-simulation ((this Discrete-Dynamics-World) (time-step number) &optional (max-subSteps 1) (fixed-Time-Step 1/60))
+
+  (cond ((and time-step max-subSteps fixed-time-step)
+	 (cl-bullet-bindings::btDiscreteDynamicsWorld_stepSimulation3 (slot-value this 'ff-pointer) (float time-step) max-subSteps (float fixed-Time-Step)))
+
+	((and (and time-step max-subSteps) (not fixed-time-step))
+	 (cl-bullet-bindings::btDiscreteDynamicsWorld_stepSimulation2 (slot-value this 'ff-pointer) (float time-step) max-subSteps))
+
+	((and time-step (not max-subSteps) (not fixed-time-step))
+	 (cl-bullet-bindings::btDiscreteDynamicsWorld_stepSimulation3 (slot-value this 'ff-pointer) (float time-step)))))
+	
+						 
+
+							     
 
   
 (cl:defmethod destroy ((this Discrete-Dynamics-World) &key)
@@ -254,6 +308,12 @@
 (cl:defmethod initialize-instance :after ((this Sphere-Shape) &key radius)
   (unless (slot-value this 'ff-pointer)
     (setf (slot-value this 'ff-pointer) (cl-bullet-bindings::new_btSphereShape (float radius)))))
+
+(cl:defmethod calculate-local-inertia ((this Sphere-Shape) (mass number) (inertia vector3))
+  (cl-bullet-bindings::btSphereShape_calculateLocalInertia (slot-value this 'ff-pointer)
+				       (float mass)
+				       (slot-value inertia 'ff-pointer)))
+
 
 (cl:defmethod destroy ((this Sphere-Shape) &key)
   (cl-bullet-bindings::delete_btSphereShape (slot-value this 'ff-pointer))
@@ -314,6 +374,13 @@
 	  (t (error "Can not create Transform from information!")))))
 
 
+
+(cl:defmethod get-origin ((this Transform))
+  (make-instance 'vector3
+		 :ff-pointer (cl-bullet-bindings::btTransform_getOrigin (slot-value this 'ff-pointer))))
+
+
+
 (cl:defmethod destroy ((this Transform) &key)
   (cl-bullet-bindings::delete_btTransform (slot-value this 'ff-pointer))
   (setf (slot-value this 'ff-pointer) nil))
@@ -346,6 +413,11 @@
 						  (cl-bullet-bindings::new_btDefaultMotionState_default_0)))
 	  (t (error "Could not create Default-Motion-State!")))))
 
+
+(cl:defmethod get-world-transform ((this Default-Motion-State) (trans transform))
+  (cl-bullet-bindings::btDefaultMotionState_getWorldTransform (slot-value this 'ff-pointer)
+					  (slot-value trans 'ff-pointer)))
+					  
 
 
 (cl:defmethod destroy ((this Default-Motion-State) &key)
