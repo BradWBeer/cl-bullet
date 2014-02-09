@@ -5,7 +5,7 @@
   :description "Describe cl-bullet here"
   :author "Brad Beer (WarWeasle)"
   :license "MIT"
-  :depends-on (#:cffi)
+  :depends-on (#:cffi #:sb-cga)
   :components 
   ((:module "bindings"
 	    :serial t

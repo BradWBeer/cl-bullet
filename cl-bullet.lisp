@@ -380,7 +380,13 @@
 		 :ff-pointer (cl-bullet-bindings::btTransform_getOrigin (slot-value this 'ff-pointer))))
 
 
-
+(defmethod get-opengl-matrix ((this Transform))
+  (sb-cga:transpose-matrix
+   (apply #'sb-cga:matrix 
+	  (cffi:with-foreign-object (p :float 16)
+	    (cl-bullet-bindings::btTransform_getOpenGLMatrix (slot-value this 'ff-pointer) p)
+	    (loop for i from 0 to 15 collect (cffi:mem-aref p :float i))))))
+  
 (cl:defmethod destroy ((this Transform) &key)
   (cl-bullet-bindings::delete_btTransform (slot-value this 'ff-pointer))
   (setf (slot-value this 'ff-pointer) nil))
@@ -466,6 +472,11 @@
 	       (slot-value motion-state 'ff-pointer)
 	       (slot-value collision-shape 'ff-pointer))))))
 
+(cl:defmethod set-restitution ((this Rigid-Body-Construction-Info) restitution)
+  (cl-bullet-bindings::btRigidBodyConstructionInfo_m_restitution_set (slot-value this 'ff-pointer) (float restitution)))
+
+(cl:defmethod get-restitution ((this Rigid-Body-Construction-Info))
+  (cl-bullet-bindings::btRigidBodyConstructionInfo_m_restitution_get (slot-value this 'ff-pointer)))
 
 (cl:defmethod destroy ((this Rigid-Body-Construction-Info) &key)
   (cl-bullet-bindings::delete_btRigidBodyConstructionInfo (slot-value this 'ff-pointer))
