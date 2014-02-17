@@ -45,6 +45,12 @@
 		       :motion-state  Ground-Motion-State
 		       :collision-shape Ground-Shape))
 
+   (cl-bullet::set-restitution ground-rigid-body-construction-info .5)
+   (print (cl-bullet::get-restitution ground-rigid-body-construction-info))
+  
+  ;;(cl-bullet::set-friction ground-rigid-body-construction-info .5)
+  ;;(cl-bullet::set-rolling-Friction ground-rigid-body-construction-info .5)
+  (print (cl-bullet::get-friction ground-rigid-body-construction-info))
 
   (setf ground-rigid-body (make-instance 'cl-bullet::Rigid-Body :construction-info ground-rigid-body-construction-info))
   (cl-bullet::add-rigid-body dynamics-world ground-rigid-body)
@@ -66,16 +72,24 @@
 			 :motion-state fall-motion-state
 			 :collision-shape fall-shape
 			 :local-inertia fall-inertia))
+
+    (cl-bullet::set-restitution fall-rigid-body-construction-info 1.0)
+    (print (cl-bullet::get-restitution fall-rigid-body-construction-info))
+	
+    (cl-bullet::set-friction fall-rigid-body-construction-info .5)
+    (cl-bullet::set-rolling-Friction fall-rigid-body-construction-info .5)
+    (print (cl-bullet::get-friction fall-rigid-body-construction-info))
+
     (setf fall-rigid-body (make-instance 'cl-bullet::Rigid-Body :construction-info fall-rigid-body-construction-info))
     (cl-bullet::add-rigid-body dynamics-world fall-rigid-body))
 
   
-  (dotimes (i 300)
+  (dotimes (i 600)
     (cl-bullet::step-simulation dynamics-world 1/60 10)
     
     (cl-bullet::get-world-transform fall-motion-state transform)
     
-    (print (cl-bullet::get-y (cl-bullet::get-origin transform)))
+    (format t "#~A: ~A~%" i (cl-bullet::get-y (cl-bullet::get-origin transform)))
     ))
     
 			

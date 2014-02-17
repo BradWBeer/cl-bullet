@@ -478,6 +478,20 @@
 (cl:defmethod get-restitution ((this Rigid-Body-Construction-Info))
   (cl-bullet-bindings::btRigidBodyConstructionInfo_m_restitution_get (slot-value this 'ff-pointer)))
 
+(cl:defmethod set-friction ((this Rigid-Body-Construction-Info) friction)
+  (cl-bullet-bindings::btRigidBodyConstructionInfo_m_friction_set (slot-value this 'ff-pointer) (float friction)))
+
+(cl:defmethod get-friction ((this Rigid-Body-Construction-Info))
+  (cl-bullet-bindings::btRigidBodyConstructionInfo_m_friction_get (slot-value this 'ff-pointer)))
+
+(cl:defmethod set-rolling-Friction ((this Rigid-Body-Construction-Info) rollingFriction)
+  (cl-bullet-bindings::btRigidBodyConstructionInfo_m_rollingFriction_set (slot-value this 'ff-pointer) (float rollingFriction)))
+
+(cl:defmethod get-rolling-Friction ((this Rigid-Body-Construction-Info))
+  (cl-bullet-bindings::btRigidBodyConstructionInfo_m_rollingFriction_get (slot-value this 'ff-pointer)))
+
+
+
 (cl:defmethod destroy ((this Rigid-Body-Construction-Info) &key)
   (cl-bullet-bindings::delete_btRigidBodyConstructionInfo (slot-value this 'ff-pointer))
   (setf (slot-value this 'ff-pointer) nil))
