@@ -44,23 +44,22 @@
 		       :mass 0
 		       :motion-state  Ground-Motion-State
 		       :collision-shape Ground-Shape))
-
+  
    (cl-bullet::set-restitution ground-rigid-body-construction-info .5)
    (print (cl-bullet::get-restitution ground-rigid-body-construction-info))
   
-  ;;(cl-bullet::set-friction ground-rigid-body-construction-info .5)
-  ;;(cl-bullet::set-rolling-Friction ground-rigid-body-construction-info .5)
-  (print (cl-bullet::get-friction ground-rigid-body-construction-info))
+   (cl-bullet::set-friction ground-rigid-body-construction-info .5)
+   (cl-bullet::set-rolling-Friction ground-rigid-body-construction-info .5)
 
-  (setf ground-rigid-body (make-instance 'cl-bullet::Rigid-Body :construction-info ground-rigid-body-construction-info))
-  (cl-bullet::add-rigid-body dynamics-world ground-rigid-body)
-
-  
-  (cl-bullet::with-destroy* ((Quaternion (make-instance 'cl-bullet::Quaternion :values '(0 0 0 1)))
-			     (vector     (make-instance 'cl-bullet::Vector3 :x 0 :y 50 :z 0))
-			     (transform  (make-instance 'cl-bullet::Transform
-							:quaternion quaternion
-							:vector vector))
+   (setf ground-rigid-body (make-instance 'cl-bullet::Rigid-Body :construction-info ground-rigid-body-construction-info))
+   (cl-bullet::add-rigid-body dynamics-world ground-rigid-body)
+   
+   
+   (cl-bullet::with-destroy* ((Quaternion (make-instance 'cl-bullet::Quaternion :values '(0 0 0 1)))
+			      (vector     (make-instance 'cl-bullet::Vector3 :x 0 :y 50 :z 0))
+			      (transform  (make-instance 'cl-bullet::Transform
+							 :quaternion quaternion
+							 :vector vector))
 			     (fall-inertia (make-instance 'cl-bullet::vector3 :x 0 :y 0 :z 0)))
 
     (setf fall-motion-state (make-instance 'cl-bullet::default-motion-state :start transform))
@@ -78,7 +77,6 @@
 	
     (cl-bullet::set-friction fall-rigid-body-construction-info .5)
     (cl-bullet::set-rolling-Friction fall-rigid-body-construction-info .5)
-    (print (cl-bullet::get-friction fall-rigid-body-construction-info))
 
     (setf fall-rigid-body (make-instance 'cl-bullet::Rigid-Body :construction-info fall-rigid-body-construction-info))
     (cl-bullet::add-rigid-body dynamics-world fall-rigid-body))

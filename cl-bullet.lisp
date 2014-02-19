@@ -89,6 +89,8 @@
 
 (defclass Sphere-Shape (Convex-Internal-Shape) ())
 
+(defclass Box-Shape (Convex-Internal-Shape) ())
+
 (defclass Soft-Cluster-CollisionShape  (Convex-Internal-Shape) ())
 
 (defclass Collision-Configuration (c-class) ())
@@ -315,8 +317,30 @@
 				       (slot-value inertia 'ff-pointer)))
 
 
+(cl:defmethod get-Radius ((this sphere-shape) &key)
+  (btSphereShape_getRadius (slot-value this 'ff-pointer)))
+
+(cl:defmethod set-Radius ((this sphere-shape) (radius number))
+  (cffi:with-foreign-objects ((r :float))
+    (setf r (float radius))
+    (cl-bullet-bindings::btSphereShape_setUnscaledRadius (slot-value this 'ff-pointer) r)))
+
+
 (cl:defmethod destroy ((this Sphere-Shape) &key)
   (cl-bullet-bindings::delete_btSphereShape (slot-value this 'ff-pointer))
+  (setf (slot-value this 'ff-pointer) nil))
+
+(cl:defmethod initialize-instance ((this box-shape) &key half-extents)
+  (cl-bullet-bindings::new_btBoxShape (slot-value half-extents 'ff-pointer)))
+
+(cl:defmethod calculate-local-inertia ((this Box-Shape) (mass number) (inertia vector3))
+  (cl-bullet-bindings::btBoxShape_calculateLocalInertia (slot-value this 'ff-pointer)
+				       (float mass)
+				       (slot-value inertia 'ff-pointer)))
+
+
+(cl:defmethod destroy ((this Box-Shape) &key)
+  (cl-bullet-bindings::delete_btBoxShape (slot-value this 'ff-pointer))
   (setf (slot-value this 'ff-pointer) nil))
 
 

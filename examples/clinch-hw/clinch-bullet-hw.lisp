@@ -65,7 +65,7 @@ void main() {
 (defvar lightIntensity '(.8 .8 .8))
 
 ;; lightDirection The direction of the light source. An XYZ normal value.
-(defvar lightDirection '(0 0 0))
+(defvar lightDirection '(1 5 1))
 
 
 ;; bullet physics objects...
@@ -121,6 +121,11 @@ void main() {
 		       :motion-state  Ground-Motion-State
 		       :collision-shape Ground-Shape))
 
+   (cl-bullet::set-restitution ground-rigid-body-construction-info .5)
+   (print (cl-bullet::get-restitution ground-rigid-body-construction-info))
+  
+   (cl-bullet::set-friction ground-rigid-body-construction-info .5)
+   (cl-bullet::set-rolling-Friction ground-rigid-body-construction-info .5)
 
   
   (setf ground-rigid-body (make-instance 'cl-bullet::Rigid-Body :construction-info ground-rigid-body-construction-info))
@@ -143,9 +148,14 @@ void main() {
 			 :motion-state fall-motion-state
 			 :collision-shape fall-shape
 			 :local-inertia fall-inertia))
-    (cl-bullet::set-restitution fall-rigid-body-construction-info 1)
-    (format t "Restitution = ~A~%" (cl-bullet::get-restitution fall-rigid-body-construction-info))
 
+    (cl-bullet::set-restitution fall-rigid-body-construction-info 1.0)
+    (print (cl-bullet::get-restitution fall-rigid-body-construction-info))
+	
+    (cl-bullet::set-friction fall-rigid-body-construction-info .5)
+    (cl-bullet::set-rolling-Friction fall-rigid-body-construction-info .5)
+
+    
 
     (setf fall-rigid-body (make-instance 'cl-bullet::Rigid-Body :construction-info fall-rigid-body-construction-info))
     (cl-bullet::add-rigid-body dynamics-world fall-rigid-body)))
@@ -182,8 +192,8 @@ void main() {
 
 
   (setf node (make-instance 'clinch:node))
-  (clinch:translate node  0 -1 -5)
-  (clinch:rotate node (clinch:degrees->radians -25) 1 0 0)
+  (clinch:translate node  0 -15 -25)
+  ;;(clinch:rotate node (clinch:degrees->radians -25) 1 0 0)
 
 
   (setf shape-node (make-instance 'clinch:node :parent node))
@@ -285,35 +295,20 @@ void main() {
   
 (defun clean-up ()
 
-  (print 'A)
   (cl-bullet::destroy broadphase)
-  (print 'B)
   (cl-bullet::destroy collision-Configuration)
-  (print 'C)
   (cl-bullet::destroy dispatcher)
-  (print 'CD)
   (cl-bullet::destroy solver)
-  (print 'D)
   ;(cl-bullet::destroy dynamics-World)
-  (print 'E)
   (cl-bullet::destroy Ground-Shape)
-  (print 'F)
   (cl-bullet::destroy Fall-Shape)
-  (print 'G)
   (cl-bullet::destroy ground-Motion-State)
-  (print 'H)
   (cl-bullet::destroy ground-rigid-body-construction-info)
-  (print 'I)
   (cl-bullet::destroy ground-rigid-body)
-  (print 'J)
   (cl-bullet::destroy fall-Motion-State)
-  (print 'K)
   (cl-bullet::destroy fall-rigid-body-construction-info)
-  (print 'L)
   (cl-bullet::destroy fall-rigid-body)
-  (print 'M)
   (cl-bullet::destroy transform)
-  (print 'N)
   
   (clinch:unload shape-normal-buffer)
   (clinch:unload shape-point-buffer)
