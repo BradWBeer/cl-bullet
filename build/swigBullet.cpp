@@ -175,6 +175,8 @@ template <typename T> T SwigValueInit() {
 #include <BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h>
 #include <BulletSoftBody/btDefaultSoftBodySolver.h>
 #include <btBulletDynamicsCommon.h>
+#include <BulletCollision/CollisionDispatch/btGhostObject.h>
+
 
 
 typedef btSoftBody::Element Element;
@@ -8537,6 +8539,477 @@ EXPORT void _wrap_btCollisionWorld_serialize (btCollisionWorld *larg1, btSeriali
 }
 
 
+EXPORT btGhostObject *_wrap_new_btGhostObject () {
+  btGhostObject * lresult = (btGhostObject *)0 ;
+  btGhostObject *result = 0 ;
+  
+  try {
+    result = (btGhostObject *)new btGhostObject();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btGhostObject *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btGhostObject (btGhostObject *larg1) {
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btGhostObject_convexSweepTest__SWIG_0 (btGhostObject *larg1, btConvexShape *larg2, btTransform *larg3, btTransform *larg4, btCollisionWorld::ConvexResultCallback *larg5, btScalar larg6) {
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  btConvexShape *arg2 = (btConvexShape *) 0 ;
+  btTransform *arg3 = 0 ;
+  btTransform *arg4 = 0 ;
+  btCollisionWorld::ConvexResultCallback *arg5 = 0 ;
+  btScalar arg6 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  arg5 = larg5;
+  arg6 = larg6;
+  try {
+    ((btGhostObject const *)arg1)->convexSweepTest((btConvexShape const *)arg2,(btTransform const &)*arg3,(btTransform const &)*arg4,*arg5,arg6);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btGhostObject_convexSweepTest__SWIG_1 (btGhostObject *larg1, btConvexShape *larg2, btTransform *larg3, btTransform *larg4, btCollisionWorld::ConvexResultCallback *larg5) {
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  btConvexShape *arg2 = (btConvexShape *) 0 ;
+  btTransform *arg3 = 0 ;
+  btTransform *arg4 = 0 ;
+  btCollisionWorld::ConvexResultCallback *arg5 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  arg5 = larg5;
+  try {
+    ((btGhostObject const *)arg1)->convexSweepTest((btConvexShape const *)arg2,(btTransform const &)*arg3,(btTransform const &)*arg4,*arg5);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btGhostObject_rayTest (btGhostObject *larg1, btVector3 *larg2, btVector3 *larg3, btCollisionWorld::RayResultCallback *larg4) {
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  btVector3 *arg2 = 0 ;
+  btVector3 *arg3 = 0 ;
+  btCollisionWorld::RayResultCallback *arg4 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    ((btGhostObject const *)arg1)->rayTest((btVector3 const &)*arg2,(btVector3 const &)*arg3,*arg4);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btGhostObject_addOverlappingObjectInternal__SWIG_0 (btGhostObject *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->addOverlappingObjectInternal(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btGhostObject_addOverlappingObjectInternal__SWIG_1 (btGhostObject *larg1, btBroadphaseProxy *larg2) {
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->addOverlappingObjectInternal(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btGhostObject_removeOverlappingObjectInternal__SWIG_0 (btGhostObject *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3, btBroadphaseProxy *larg4) {
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  btBroadphaseProxy *arg4 = (btBroadphaseProxy *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    (arg1)->removeOverlappingObjectInternal(arg2,arg3,arg4);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btGhostObject_removeOverlappingObjectInternal__SWIG_1 (btGhostObject *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->removeOverlappingObjectInternal(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btGhostObject_getNumOverlappingObjects (btGhostObject *larg1) {
+  int lresult = (int)0 ;
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btGhostObject const *)arg1)->getNumOverlappingObjects();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT btCollisionObject *_wrap_btGhostObject_getOverlappingObject__SWIG_0 (btGhostObject *larg1, int larg2) {
+  btCollisionObject * lresult = (btCollisionObject *)0 ;
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  int arg2 ;
+  btCollisionObject *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    result = (btCollisionObject *)(arg1)->getOverlappingObject(arg2);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btCollisionObject *)0;
+  }
+}
+
+
+EXPORT btCollisionObject *_wrap_btGhostObject_getOverlappingObject__SWIG_1 (btGhostObject *larg1, int larg2) {
+  btCollisionObject * lresult = (btCollisionObject *)0 ;
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  int arg2 ;
+  btCollisionObject *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    result = (btCollisionObject *)((btGhostObject const *)arg1)->getOverlappingObject(arg2);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btCollisionObject *)0;
+  }
+}
+
+
+EXPORT btAlignedObjectArray< btCollisionObject * > *_wrap_btGhostObject_getOverlappingPairs__SWIG_0 (btGhostObject *larg1) {
+  btAlignedObjectArray< btCollisionObject * > * lresult = (btAlignedObjectArray< btCollisionObject * > *)0 ;
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  btAlignedObjectArray< btCollisionObject * > *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btAlignedObjectArray< btCollisionObject * > *) &(arg1)->getOverlappingPairs();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btAlignedObjectArray< btCollisionObject * > *)0;
+  }
+}
+
+
+EXPORT btAlignedObjectArray< btCollisionObject * > const *_wrap_btGhostObject_getOverlappingPairs__SWIG_1 (btGhostObject *larg1) {
+  btAlignedObjectArray< btCollisionObject * > const * lresult = (btAlignedObjectArray< btCollisionObject * > const *)0 ;
+  btGhostObject *arg1 = (btGhostObject *) 0 ;
+  SwigValueWrapper< btAlignedObjectArray< btCollisionObject * > > result;
+  
+  arg1 = larg1;
+  try {
+    result = ((btGhostObject const *)arg1)->getOverlappingPairs();
+    lresult = new btAlignedObjectArray< btCollisionObject * > const(result);
+    return lresult;
+  } catch (...) {
+    return (btAlignedObjectArray< btCollisionObject * > const *)0;
+  }
+}
+
+
+EXPORT btGhostObject *_wrap_btGhostObject_upcast__SWIG_0 (btCollisionObject *larg1) {
+  btGhostObject * lresult = (btGhostObject *)0 ;
+  btCollisionObject *arg1 = (btCollisionObject *) 0 ;
+  btGhostObject *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btGhostObject *)btGhostObject::upcast((btCollisionObject const *)arg1);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btGhostObject *)0;
+  }
+}
+
+
+EXPORT btGhostObject *_wrap_btGhostObject_upcast__SWIG_1 (btCollisionObject *larg1) {
+  btGhostObject * lresult = (btGhostObject *)0 ;
+  btCollisionObject *arg1 = (btCollisionObject *) 0 ;
+  btGhostObject *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btGhostObject *)btGhostObject::upcast(arg1);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btGhostObject *)0;
+  }
+}
+
+
+EXPORT btPairCachingGhostObject *_wrap_new_btPairCachingGhostObject () {
+  btPairCachingGhostObject * lresult = (btPairCachingGhostObject *)0 ;
+  btPairCachingGhostObject *result = 0 ;
+  
+  try {
+    result = (btPairCachingGhostObject *)new btPairCachingGhostObject();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btPairCachingGhostObject *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btPairCachingGhostObject (btPairCachingGhostObject *larg1) {
+  btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btPairCachingGhostObject_addOverlappingObjectInternal__SWIG_0 (btPairCachingGhostObject *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->addOverlappingObjectInternal(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btPairCachingGhostObject_addOverlappingObjectInternal__SWIG_1 (btPairCachingGhostObject *larg1, btBroadphaseProxy *larg2) {
+  btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->addOverlappingObjectInternal(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btPairCachingGhostObject_removeOverlappingObjectInternal__SWIG_0 (btPairCachingGhostObject *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3, btBroadphaseProxy *larg4) {
+  btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  btBroadphaseProxy *arg4 = (btBroadphaseProxy *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    (arg1)->removeOverlappingObjectInternal(arg2,arg3,arg4);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btPairCachingGhostObject_removeOverlappingObjectInternal__SWIG_1 (btPairCachingGhostObject *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->removeOverlappingObjectInternal(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btHashedOverlappingPairCache *_wrap_btPairCachingGhostObject_getOverlappingPairCache (btPairCachingGhostObject *larg1) {
+  btHashedOverlappingPairCache * lresult = (btHashedOverlappingPairCache *)0 ;
+  btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
+  btHashedOverlappingPairCache *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btHashedOverlappingPairCache *)(arg1)->getOverlappingPairCache();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btHashedOverlappingPairCache *)0;
+  }
+}
+
+
+EXPORT btGhostPairCallback *_wrap_new_btGhostPairCallback () {
+  btGhostPairCallback * lresult = (btGhostPairCallback *)0 ;
+  btGhostPairCallback *result = 0 ;
+  
+  try {
+    result = (btGhostPairCallback *)new btGhostPairCallback();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btGhostPairCallback *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btGhostPairCallback (btGhostPairCallback *larg1) {
+  btGhostPairCallback *arg1 = (btGhostPairCallback *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btGhostPairCallback_addOverlappingPair (btGhostPairCallback *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btGhostPairCallback *arg1 = (btGhostPairCallback *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btBroadphasePair *)(arg1)->addOverlappingPair(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT void *_wrap_btGhostPairCallback_removeOverlappingPair (btGhostPairCallback *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3, btDispatcher *larg4) {
+  void * lresult = (void *)0 ;
+  btGhostPairCallback *arg1 = (btGhostPairCallback *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg4 = (btDispatcher *) 0 ;
+  void *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    result = (void *)(arg1)->removeOverlappingPair(arg2,arg3,arg4);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (void *)0;
+  }
+}
+
+
+EXPORT void _wrap_btGhostPairCallback_removeOverlappingPairsContainingProxy (btGhostPairCallback *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btGhostPairCallback *arg1 = (btGhostPairCallback *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->removeOverlappingPairsContainingProxy(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
 EXPORT void _wrap_delete_btCollisionShape (btCollisionShape *larg1) {
   btCollisionShape *arg1 = (btCollisionShape *) 0 ;
   
@@ -11461,6 +11934,350 @@ EXPORT void _wrap_btBoxShape_getPreferredPenetrationDirection (btBoxShape *larg1
 
 EXPORT void _wrap_delete_btBoxShape (btBoxShape *larg1) {
   btBoxShape *arg1 = (btBoxShape *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btCapsuleShape *_wrap_new_btCapsuleShape__SWIG_1 (btScalar larg1, btScalar larg2) {
+  btCapsuleShape * lresult = (btCapsuleShape *)0 ;
+  btScalar arg1 ;
+  btScalar arg2 ;
+  btCapsuleShape *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    result = (btCapsuleShape *)new btCapsuleShape(arg1,arg2);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btCapsuleShape *)0;
+  }
+}
+
+
+EXPORT void _wrap_btCapsuleShape_calculateLocalInertia (btCapsuleShape *larg1, btScalar larg2, btVector3 *larg3) {
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btScalar arg2 ;
+  btVector3 *arg3 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    ((btCapsuleShape const *)arg1)->calculateLocalInertia(arg2,*arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btVector3 *_wrap_btCapsuleShape_localGetSupportingVertexWithoutMargin (btCapsuleShape *larg1, btVector3 *larg2) {
+  btVector3 * lresult = (btVector3 *)0 ;
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btVector3 *arg2 = 0 ;
+  btVector3 result;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    result = ((btCapsuleShape const *)arg1)->localGetSupportingVertexWithoutMargin((btVector3 const &)*arg2);
+    lresult = new btVector3(result);
+    return lresult;
+  } catch (...) {
+    return (btVector3 *)0;
+  }
+}
+
+
+EXPORT void _wrap_btCapsuleShape_batchedUnitVectorGetSupportingVertexWithoutMargin (btCapsuleShape *larg1, btVector3 *larg2, btVector3 *larg3, int larg4) {
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btVector3 *arg2 = (btVector3 *) 0 ;
+  btVector3 *arg3 = (btVector3 *) 0 ;
+  int arg4 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    ((btCapsuleShape const *)arg1)->batchedUnitVectorGetSupportingVertexWithoutMargin((btVector3 const *)arg2,arg3,arg4);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btCapsuleShape_setMargin (btCapsuleShape *larg1, btScalar larg2) {
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btScalar arg2 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setMargin(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btCapsuleShape_getAabb (btCapsuleShape *larg1, btTransform *larg2, btVector3 *larg3, btVector3 *larg4) {
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btTransform *arg2 = 0 ;
+  btVector3 *arg3 = 0 ;
+  btVector3 *arg4 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    ((btCapsuleShape const *)arg1)->getAabb((btTransform const &)*arg2,*arg3,*arg4);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT char *_wrap_btCapsuleShape_getName (btCapsuleShape *larg1) {
+  char * lresult = (char *)0 ;
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (char *)((btCapsuleShape const *)arg1)->getName();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (char *)0;
+  }
+}
+
+
+EXPORT int _wrap_btCapsuleShape_getUpAxis (btCapsuleShape *larg1) {
+  int lresult = (int)0 ;
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btCapsuleShape const *)arg1)->getUpAxis();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT btScalar _wrap_btCapsuleShape_getRadius (btCapsuleShape *larg1) {
+  btScalar lresult = (btScalar)0 ;
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btScalar result;
+  
+  arg1 = larg1;
+  try {
+    result = (btScalar)((btCapsuleShape const *)arg1)->getRadius();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btScalar)0;
+  }
+}
+
+
+EXPORT btScalar _wrap_btCapsuleShape_getHalfHeight (btCapsuleShape *larg1) {
+  btScalar lresult = (btScalar)0 ;
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btScalar result;
+  
+  arg1 = larg1;
+  try {
+    result = (btScalar)((btCapsuleShape const *)arg1)->getHalfHeight();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btScalar)0;
+  }
+}
+
+
+EXPORT void _wrap_btCapsuleShape_setLocalScaling (btCapsuleShape *larg1, btVector3 *larg2) {
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btVector3 *arg2 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setLocalScaling((btVector3 const &)*arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btVector3 *_wrap_btCapsuleShape_getAnisotropicRollingFrictionDirection (btCapsuleShape *larg1) {
+  btVector3 * lresult = (btVector3 *)0 ;
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  btVector3 result;
+  
+  arg1 = larg1;
+  try {
+    result = ((btCapsuleShape const *)arg1)->getAnisotropicRollingFrictionDirection();
+    lresult = new btVector3(result);
+    return lresult;
+  } catch (...) {
+    return (btVector3 *)0;
+  }
+}
+
+
+EXPORT int _wrap_btCapsuleShape_calculateSerializeBufferSize (btCapsuleShape *larg1) {
+  int lresult = (int)0 ;
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btCapsuleShape const *)arg1)->calculateSerializeBufferSize();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT char *_wrap_btCapsuleShape_serialize (btCapsuleShape *larg1, void *larg2, btSerializer *larg3) {
+  char * lresult = (char *)0 ;
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  void *arg2 = (void *) 0 ;
+  btSerializer *arg3 = (btSerializer *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (char *)((btCapsuleShape const *)arg1)->serialize(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (char *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btCapsuleShape (btCapsuleShape *larg1) {
+  btCapsuleShape *arg1 = (btCapsuleShape *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btCapsuleShapeX *_wrap_new_btCapsuleShapeX (btScalar larg1, btScalar larg2) {
+  btCapsuleShapeX * lresult = (btCapsuleShapeX *)0 ;
+  btScalar arg1 ;
+  btScalar arg2 ;
+  btCapsuleShapeX *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    result = (btCapsuleShapeX *)new btCapsuleShapeX(arg1,arg2);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btCapsuleShapeX *)0;
+  }
+}
+
+
+EXPORT char *_wrap_btCapsuleShapeX_getName (btCapsuleShapeX *larg1) {
+  char * lresult = (char *)0 ;
+  btCapsuleShapeX *arg1 = (btCapsuleShapeX *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (char *)((btCapsuleShapeX const *)arg1)->getName();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (char *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btCapsuleShapeX (btCapsuleShapeX *larg1) {
+  btCapsuleShapeX *arg1 = (btCapsuleShapeX *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btCapsuleShapeZ *_wrap_new_btCapsuleShapeZ (btScalar larg1, btScalar larg2) {
+  btCapsuleShapeZ * lresult = (btCapsuleShapeZ *)0 ;
+  btScalar arg1 ;
+  btScalar arg2 ;
+  btCapsuleShapeZ *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    result = (btCapsuleShapeZ *)new btCapsuleShapeZ(arg1,arg2);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btCapsuleShapeZ *)0;
+  }
+}
+
+
+EXPORT char *_wrap_btCapsuleShapeZ_getName (btCapsuleShapeZ *larg1) {
+  char * lresult = (char *)0 ;
+  btCapsuleShapeZ *arg1 = (btCapsuleShapeZ *) 0 ;
+  char *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (char *)((btCapsuleShapeZ const *)arg1)->getName();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (char *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btCapsuleShapeZ (btCapsuleShapeZ *larg1) {
+  btCapsuleShapeZ *arg1 = (btCapsuleShapeZ *) 0 ;
   
   arg1 = larg1;
   try {
@@ -22463,6 +23280,327 @@ EXPORT btConstraintSolverType _wrap_btSequentialImpulseConstraintSolver_getSolve
     return lresult;
   } catch (...) {
     return (btConstraintSolverType)0;
+  }
+}
+
+
+EXPORT btSoftRigidDynamicsWorld *_wrap_new_btSoftRigidDynamicsWorld__SWIG_0 (btDispatcher *larg1, btBroadphaseInterface *larg2, btConstraintSolver *larg3, btCollisionConfiguration *larg4, btSoftBodySolver *larg5) {
+  btSoftRigidDynamicsWorld * lresult = (btSoftRigidDynamicsWorld *)0 ;
+  btDispatcher *arg1 = (btDispatcher *) 0 ;
+  btBroadphaseInterface *arg2 = (btBroadphaseInterface *) 0 ;
+  btConstraintSolver *arg3 = (btConstraintSolver *) 0 ;
+  btCollisionConfiguration *arg4 = (btCollisionConfiguration *) 0 ;
+  btSoftBodySolver *arg5 = (btSoftBodySolver *) 0 ;
+  btSoftRigidDynamicsWorld *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  arg5 = larg5;
+  try {
+    result = (btSoftRigidDynamicsWorld *)new btSoftRigidDynamicsWorld(arg1,arg2,arg3,arg4,arg5);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btSoftRigidDynamicsWorld *)0;
+  }
+}
+
+
+EXPORT btSoftRigidDynamicsWorld *_wrap_new_btSoftRigidDynamicsWorld__SWIG_1 (btDispatcher *larg1, btBroadphaseInterface *larg2, btConstraintSolver *larg3, btCollisionConfiguration *larg4) {
+  btSoftRigidDynamicsWorld * lresult = (btSoftRigidDynamicsWorld *)0 ;
+  btDispatcher *arg1 = (btDispatcher *) 0 ;
+  btBroadphaseInterface *arg2 = (btBroadphaseInterface *) 0 ;
+  btConstraintSolver *arg3 = (btConstraintSolver *) 0 ;
+  btCollisionConfiguration *arg4 = (btCollisionConfiguration *) 0 ;
+  btSoftRigidDynamicsWorld *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    result = (btSoftRigidDynamicsWorld *)new btSoftRigidDynamicsWorld(arg1,arg2,arg3,arg4);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btSoftRigidDynamicsWorld *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btSoftRigidDynamicsWorld (btSoftRigidDynamicsWorld *larg1) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_debugDrawWorld (btSoftRigidDynamicsWorld *larg1) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    (arg1)->debugDrawWorld();
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_addSoftBody__SWIG_0 (btSoftRigidDynamicsWorld *larg1, btSoftBody *larg2, short larg3, short larg4) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSoftBody *arg2 = (btSoftBody *) 0 ;
+  short arg3 ;
+  short arg4 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    (arg1)->addSoftBody(arg2,arg3,arg4);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_addSoftBody__SWIG_1 (btSoftRigidDynamicsWorld *larg1, btSoftBody *larg2, short larg3) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSoftBody *arg2 = (btSoftBody *) 0 ;
+  short arg3 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->addSoftBody(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_addSoftBody__SWIG_2 (btSoftRigidDynamicsWorld *larg1, btSoftBody *larg2) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSoftBody *arg2 = (btSoftBody *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->addSoftBody(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_removeSoftBody (btSoftRigidDynamicsWorld *larg1, btSoftBody *larg2) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSoftBody *arg2 = (btSoftBody *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->removeSoftBody(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_removeCollisionObject (btSoftRigidDynamicsWorld *larg1, btCollisionObject *larg2) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btCollisionObject *arg2 = (btCollisionObject *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->removeCollisionObject(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btSoftRigidDynamicsWorld_getDrawFlags (btSoftRigidDynamicsWorld *larg1) {
+  int lresult = (int)0 ;
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btSoftRigidDynamicsWorld const *)arg1)->getDrawFlags();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_setDrawFlags (btSoftRigidDynamicsWorld *larg1, int larg2) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  int arg2 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setDrawFlags(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btSoftBodyWorldInfo *_wrap_btSoftRigidDynamicsWorld_getWorldInfo__SWIG_0 (btSoftRigidDynamicsWorld *larg1) {
+  btSoftBodyWorldInfo * lresult = (btSoftBodyWorldInfo *)0 ;
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSoftBodyWorldInfo *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btSoftBodyWorldInfo *) &(arg1)->getWorldInfo();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btSoftBodyWorldInfo *)0;
+  }
+}
+
+
+EXPORT btSoftBodyWorldInfo *_wrap_btSoftRigidDynamicsWorld_getWorldInfo__SWIG_1 (btSoftRigidDynamicsWorld *larg1) {
+  btSoftBodyWorldInfo * lresult = (btSoftBodyWorldInfo *)0 ;
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSoftBodyWorldInfo *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btSoftBodyWorldInfo *) &((btSoftRigidDynamicsWorld const *)arg1)->getWorldInfo();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btSoftBodyWorldInfo *)0;
+  }
+}
+
+
+EXPORT btDynamicsWorldType _wrap_btSoftRigidDynamicsWorld_getWorldType (btSoftRigidDynamicsWorld *larg1) {
+  btDynamicsWorldType lresult = (btDynamicsWorldType)0 ;
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btDynamicsWorldType result;
+  
+  arg1 = larg1;
+  try {
+    result = (btDynamicsWorldType)((btSoftRigidDynamicsWorld const *)arg1)->getWorldType();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btDynamicsWorldType)0;
+  }
+}
+
+
+EXPORT btSoftBodyArray *_wrap_btSoftRigidDynamicsWorld_getSoftBodyArray__SWIG_0 (btSoftRigidDynamicsWorld *larg1) {
+  btSoftBodyArray * lresult = (btSoftBodyArray *)0 ;
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSoftBodyArray *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btSoftBodyArray *) &(arg1)->getSoftBodyArray();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btSoftBodyArray *)0;
+  }
+}
+
+
+EXPORT btSoftBodyArray *_wrap_btSoftRigidDynamicsWorld_getSoftBodyArray__SWIG_1 (btSoftRigidDynamicsWorld *larg1) {
+  btSoftBodyArray * lresult = (btSoftBodyArray *)0 ;
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSoftBodyArray *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btSoftBodyArray *) &((btSoftRigidDynamicsWorld const *)arg1)->getSoftBodyArray();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btSoftBodyArray *)0;
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_rayTest (btSoftRigidDynamicsWorld *larg1, btVector3 *larg2, btVector3 *larg3, btCollisionWorld::RayResultCallback *larg4) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btVector3 *arg2 = 0 ;
+  btVector3 *arg3 = 0 ;
+  btCollisionWorld::RayResultCallback *arg4 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    ((btSoftRigidDynamicsWorld const *)arg1)->rayTest((btVector3 const &)*arg2,(btVector3 const &)*arg3,*arg4);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_rayTestSingle (btTransform *larg1, btTransform *larg2, btCollisionObject *larg3, btCollisionShape *larg4, btTransform *larg5, btCollisionWorld::RayResultCallback *larg6) {
+  btTransform *arg1 = 0 ;
+  btTransform *arg2 = 0 ;
+  btCollisionObject *arg3 = (btCollisionObject *) 0 ;
+  btCollisionShape *arg4 = (btCollisionShape *) 0 ;
+  btTransform *arg5 = 0 ;
+  btCollisionWorld::RayResultCallback *arg6 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  arg5 = larg5;
+  arg6 = larg6;
+  try {
+    btSoftRigidDynamicsWorld::rayTestSingle((btTransform const &)*arg1,(btTransform const &)*arg2,arg3,(btCollisionShape const *)arg4,(btTransform const &)*arg5,*arg6);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSoftRigidDynamicsWorld_serialize (btSoftRigidDynamicsWorld *larg1, btSerializer *larg2) {
+  btSoftRigidDynamicsWorld *arg1 = (btSoftRigidDynamicsWorld *) 0 ;
+  btSerializer *arg2 = (btSerializer *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->serialize(arg2);
+    
+  } catch (...) {
+    
   }
 }
 

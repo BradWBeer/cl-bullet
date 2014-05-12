@@ -29,7 +29,7 @@
   (cl-bullet::with-destroy* ((normal (make-instance 'cl-bullet::vector3 :x 0 :y 1 :z 0)))
     (setf ground-shape (make-instance 'cl-bullet::Static-Plane-Shape :normal normal :constant 0)))
   
-  (setf Fall-Shape (make-instance 'cl-bullet::Sphere-Shape :radius 1))
+  (setf Fall-Shape (make-instance 'cl-bullet::box-Shape :x 1 :y 1 :z 1))
 
   (cl-bullet::with-destroy*
       ((Quaternion (make-instance 'cl-bullet::Quaternion :values '(0 0 0 1)))
@@ -56,7 +56,7 @@
    
    
    (cl-bullet::with-destroy* ((Quaternion (make-instance 'cl-bullet::Quaternion :values '(0 0 0 1)))
-			      (vector     (make-instance 'cl-bullet::Vector3 :x 0 :y 50 :z 0))
+			      (vector     (make-instance 'cl-bullet::Vector3 :x 0 :y 100 :z 0))
 			      (transform  (make-instance 'cl-bullet::Transform
 							 :quaternion quaternion
 							 :vector vector))

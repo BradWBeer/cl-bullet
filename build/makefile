@@ -13,10 +13,12 @@ LRAW     = $(TARGET).lisp
 all: $(TARGET)
 
 $(TARGET): $(TARGET).o
-	$(CC) $(LIBS) -o $@ $^ $(LDFLAGS)
+	$(CC) $(LIBS) -o $@.so $^ $(LDFLAGS)
 
 $(TARGET).o $(LRAW): $(TARGET).cpp
-	sed -i 's/( :pointer)/(_ :pointer)/g' swigbullet.lisp $<
+	sed -i 's/( :pointer)/(_ :pointer)/g' swigbullet.lisp
+	sed -i '7i(in-package #:cl-bullet-bindings)' swigbullet.lisp
+	cp swigbullet.lisp ../bindings/bullet-bindings.lisp
 	$(CC) $(INCLUDES) -c $(CFLAGS) $<
 
 

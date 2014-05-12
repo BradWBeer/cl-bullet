@@ -5,7 +5,7 @@
 		   (DIRECTORY-NAMESTRING
 		    (ASDF/SYSTEM:SYSTEM-RELATIVE-PATHNAME :CL-BULLET
 							  "cl-bullet.asd"))
-		   "creation_tools/")
+		   "build/")
        cffi:*foreign-library-directories*)
 
 (cffi:define-foreign-library :libBulletLinearMath

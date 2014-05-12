@@ -1,5 +1,5 @@
-%module swigbullet
-  
+%module(directors="1") swigbullet
+
 %{
 #include <BulletSoftBody/btSoftBody.h>
 #include <BulletSoftBody/btSoftBodyHelpers.h>
@@ -7,8 +7,6 @@
 #include <BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h>
 #include <BulletSoftBody/btDefaultSoftBodySolver.h>
 #include <btBulletDynamicsCommon.h>
-#include <BulletCollision/CollisionDispatch/btGhostObject.h>
-
 %}
 
 %{
@@ -268,7 +266,6 @@ struct Node : Feature
 %include "BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
 %include "BulletCollision/CollisionDispatch/btCollisionObject.h"
 %include "BulletCollision/CollisionDispatch/btCollisionWorld.h"
-%include "BulletCollision/CollisionDispatch/btGhostObject.h"
 
 %include "BulletCollision/CollisionShapes/btCollisionShape.h"
 %include "BulletCollision/CollisionShapes/btConvexShape.h"
@@ -280,7 +277,6 @@ struct Node : Feature
 %include "BulletCollision/CollisionShapes/btConcaveShape.h"
 %include "BulletCollision/CollisionShapes/btStaticPlaneShape.h"
 %include "BulletCollision/CollisionShapes/btBoxShape.h"
-%include "BulletCollision/CollisionShapes/btCapsuleShape.h"
 
 %include "BulletDynamics/Dynamics/btDynamicsWorld.h" 
 %include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h" 
@@ -360,7 +356,7 @@ btRigidBodyConstructionInfo(	btScalar mass, btMotionState* motionState, btCollis
 
 %include "BulletSoftBody/btSparseSDF.h"
 /* %include "BulletSoftBody/btSoftBody.h" */
-%include "BulletSoftBody/btSoftRigidDynamicsWorld.h"
+/* %include "BulletSoftBody/btSoftRigidDynamicsWorld.h" */
 /* %include "BulletSoftBody/btSoftBodySolvers.h" */
 /* %include "BulletSoftBody/btDefaultSoftBodySolver.h" */
 /* %include "BulletSoftBody/btSoftBodyHelpers.h" */

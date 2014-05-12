@@ -91,6 +91,8 @@
 
 (defclass Box-Shape (Convex-Internal-Shape) ())
 
+(defclass Capsule-Shape (Convex-Internal-Shape) ())
+
 (defclass Soft-Cluster-CollisionShape  (Convex-Internal-Shape) ())
 
 (defclass Collision-Configuration (c-class) ())
@@ -330,8 +332,14 @@
   (cl-bullet-bindings::delete_btSphereShape (slot-value this 'ff-pointer))
   (setf (slot-value this 'ff-pointer) nil))
 
-(cl:defmethod initialize-instance ((this box-shape) &key half-extents)
-  (cl-bullet-bindings::new_btBoxShape (slot-value half-extents 'ff-pointer)))
+
+(cl:defmethod initialize-instance :after ((this Box-Shape) &key x y z)
+  (unless (slot-value this 'ff-pointer)
+    (with-destroy
+	((extents  (make-instance 'cl-bullet::Vector3 :x x :y y :z z)))
+
+      (setf (slot-value this 'ff-pointer) (cl-bullet-bindings::new_btBoxShape (slot-value extents 'ff-pointer))))))
+
 
 (cl:defmethod calculate-local-inertia ((this Box-Shape) (mass number) (inertia vector3))
   (cl-bullet-bindings::btBoxShape_calculateLocalInertia (slot-value this 'ff-pointer)
@@ -342,6 +350,25 @@
 (cl:defmethod destroy ((this Box-Shape) &key)
   (cl-bullet-bindings::delete_btBoxShape (slot-value this 'ff-pointer))
   (setf (slot-value this 'ff-pointer) nil))
+
+
+(cl:defmethod initialize-instance :after ((this Capsule-Shape) &key radius height)
+  (unless (slot-value this 'ff-pointer)
+    (setf (slot-value this 'ff-pointer) (cl-bullet-bindings::new_btCapsuleShape (float radius) (float height)))))
+
+
+(cl:defmethod calculate-local-inertia ((this Capsule-Shape) (mass number) (inertia vector3))
+  (cl-bullet-bindings::btCapsuleShape_calculateLocalInertia (slot-value this 'ff-pointer)
+				       (float mass)
+				       (slot-value inertia 'ff-pointer)))
+
+
+(cl:defmethod destroy ((this Capsule-Shape) &key)
+  (cl-bullet-bindings::delete_btCapsuleShape (slot-value this 'ff-pointer))
+  (setf (slot-value this 'ff-pointer) nil))
+
+
+
 
 
 (cl:defmethod initialize-instance :after ((this Quaternion) &key values angle axis yaw pitch roll)
