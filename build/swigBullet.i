@@ -8,7 +8,7 @@
 #include <BulletSoftBody/btDefaultSoftBodySolver.h>
 #include <btBulletDynamicsCommon.h>
 #include <BulletCollision/CollisionDispatch/btGhostObject.h>
-
+#include <BulletDynamics/Character/btKinematicCharacterController.h>
 %}
 
 %{
@@ -286,6 +286,7 @@ struct Node : Feature
 %include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h" 
 %include "BulletDynamics/Dynamics/btSimpleDynamicsWorld.h"
 %include "BulletDynamics/Dynamics/btRigidBody.h"
+%include "BulletDynamics/Character/btKinematicCharacterController.h"
 
 class	btRigidBodyConstructionInfo
 {

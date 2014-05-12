@@ -44,16 +44,21 @@
 
 (defclass Matrix3x3 (c-class) ())
 
-
 (defclass Broadphase-Interface (c-class) ())
 
 (defclass Dbvt-Broadphase (Broadphase-Interface) ())
+
+(defclass Axis-Sweep3 (Broadphase-Interface) ())
 
 (defclass Motion-State (c-class) ())
 
 (defclass Default-Motion-State (Motion-State) ())
 
 (defclass Collision-Object (c-class) ()) ;; !!!!
+
+(defclass Ghost-Object (Collision-Object) ())
+
+(defclass Pair-Caching-Ghost-Object (Ghost-Object) ())
 
 (defclass Rigid-Body (Collision-Object) ())
 
@@ -123,12 +128,21 @@
 
 (defclass  Default-Serializer (Serializer) ())
 
-
 (defclass dispatcher (c-class) ())
+
 (defclass collision-dispatcher (dispatcher) ())
 
 (defclass Constraint-Solver (c-class) ())
+
 (defclass Sequential-Impulse-Constraint-Solver (Constraint-Solver) ())
+
+(defclass Action-Interface (c-class) ())
+
+(defclass Character-Controller-Interface (Action-Interface) ())
+
+(defclass Kinematic-Character-Controller (Character-Controller-Interface) ())
+
+
 
 (cl:defmethod initialize-instance :after ((this vector3) &key (x 0) (y 0) (z 0))
   (unless (slot-value this 'ff-pointer)
@@ -549,4 +563,11 @@
 
 
 
+
+(cl:defmethod get-collision-flags ((this collision-object) &key)
+  (cl-bullet-bindings::btCollisionObject_getCollisionFlags (slot-value this 'ff-pointer)))
+
+
+(cl:defmethod set-collision-flags ((this collision-object) flags &key)
+  (cl-bullet-bindings::btCollisionObject_setCollisionFlags (slot-value this 'ff-pointer) flags))
 

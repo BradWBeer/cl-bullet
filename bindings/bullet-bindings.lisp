@@ -3941,6 +3941,105 @@
 	(m_additionalDamping :int)
 	(m_padding :pointer))
 
+(cffi:defcfun ("_wrap_new_btKinematicCharacterController__SWIG_0" new_btKinematicCharacterController) :pointer
+  (ghostObject :pointer)
+  (convexShape :pointer)
+  (stepHeight :float)
+  (upAxis :int))
+
+(cffi:defcfun ("_wrap_new_btKinematicCharacterController__SWIG_1" new_btKinematicCharacterController) :pointer
+  (ghostObject :pointer)
+  (convexShape :pointer)
+  (stepHeight :float))
+
+(cffi:defcfun ("_wrap_delete_btKinematicCharacterController" delete_btKinematicCharacterController) :void
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_updateAction" btKinematicCharacterController_updateAction) :void
+  (self :pointer)
+  (collisionWorld :pointer)
+  (deltaTime :float))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_debugDraw" btKinematicCharacterController_debugDraw) :void
+  (self :pointer)
+  (debugDrawer :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setUpAxis" btKinematicCharacterController_setUpAxis) :void
+  (self :pointer)
+  (axis :int))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setWalkDirection" btKinematicCharacterController_setWalkDirection) :void
+  (self :pointer)
+  (walkDirection :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setVelocityForTimeInterval" btKinematicCharacterController_setVelocityForTimeInterval) :void
+  (self :pointer)
+  (velocity :pointer)
+  (timeInterval :float))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_reset" btKinematicCharacterController_reset) :void
+  (self :pointer)
+  (collisionWorld :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_warp" btKinematicCharacterController_warp) :void
+  (self :pointer)
+  (origin :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_preStep" btKinematicCharacterController_preStep) :void
+  (self :pointer)
+  (collisionWorld :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_playerStep" btKinematicCharacterController_playerStep) :void
+  (self :pointer)
+  (collisionWorld :pointer)
+  (dt :float))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setFallSpeed" btKinematicCharacterController_setFallSpeed) :void
+  (self :pointer)
+  (fallSpeed :float))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setJumpSpeed" btKinematicCharacterController_setJumpSpeed) :void
+  (self :pointer)
+  (jumpSpeed :float))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setMaxJumpHeight" btKinematicCharacterController_setMaxJumpHeight) :void
+  (self :pointer)
+  (maxJumpHeight :float))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_canJump" btKinematicCharacterController_canJump) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_jump" btKinematicCharacterController_jump) :void
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setGravity" btKinematicCharacterController_setGravity) :void
+  (self :pointer)
+  (gravity :float))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_getGravity" btKinematicCharacterController_getGravity) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setMaxSlope" btKinematicCharacterController_setMaxSlope) :void
+  (self :pointer)
+  (slopeRadians :float))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_getMaxSlope" btKinematicCharacterController_getMaxSlope) :float
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_getGhostObject" btKinematicCharacterController_getGhostObject) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setUseGhostSweepTest" btKinematicCharacterController_setUseGhostSweepTest) :void
+  (self :pointer)
+  (useGhostObjectSweepTest :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_onGround" btKinematicCharacterController_onGround) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btKinematicCharacterController_setUpInterpolate" btKinematicCharacterController_setUpInterpolate) :void
+  (self :pointer)
+  (value :pointer))
+
 (cffi:defcfun ("_wrap_btRigidBodyConstructionInfo_m_mass_set" btRigidBodyConstructionInfo_m_mass_set) :void
   (self :pointer)
   (m_mass :float))

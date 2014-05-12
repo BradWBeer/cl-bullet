@@ -176,7 +176,7 @@ template <typename T> T SwigValueInit() {
 #include <BulletSoftBody/btDefaultSoftBodySolver.h>
 #include <btBulletDynamicsCommon.h>
 #include <BulletCollision/CollisionDispatch/btGhostObject.h>
-
+#include <BulletDynamics/Character/btKinematicCharacterController.h>
 
 
 typedef btSoftBody::Element Element;
@@ -15133,6 +15133,400 @@ EXPORT void _wrap_btRigidBody_serializeSingleObject (btRigidBody *larg1, btSeria
   arg2 = larg2;
   try {
     ((btRigidBody const *)arg1)->serializeSingleObject(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btKinematicCharacterController *_wrap_new_btKinematicCharacterController__SWIG_0 (btPairCachingGhostObject *larg1, btConvexShape *larg2, btScalar larg3, int larg4) {
+  btKinematicCharacterController * lresult = (btKinematicCharacterController *)0 ;
+  btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
+  btConvexShape *arg2 = (btConvexShape *) 0 ;
+  btScalar arg3 ;
+  int arg4 ;
+  btKinematicCharacterController *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    result = (btKinematicCharacterController *)new btKinematicCharacterController(arg1,arg2,arg3,arg4);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btKinematicCharacterController *)0;
+  }
+}
+
+
+EXPORT btKinematicCharacterController *_wrap_new_btKinematicCharacterController__SWIG_1 (btPairCachingGhostObject *larg1, btConvexShape *larg2, btScalar larg3) {
+  btKinematicCharacterController * lresult = (btKinematicCharacterController *)0 ;
+  btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
+  btConvexShape *arg2 = (btConvexShape *) 0 ;
+  btScalar arg3 ;
+  btKinematicCharacterController *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btKinematicCharacterController *)new btKinematicCharacterController(arg1,arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btKinematicCharacterController *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btKinematicCharacterController (btKinematicCharacterController *larg1) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_updateAction (btKinematicCharacterController *larg1, btCollisionWorld *larg2, btScalar larg3) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btCollisionWorld *arg2 = (btCollisionWorld *) 0 ;
+  btScalar arg3 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->updateAction(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_debugDraw (btKinematicCharacterController *larg1, btIDebugDraw *larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btIDebugDraw *arg2 = (btIDebugDraw *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->debugDraw(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setUpAxis (btKinematicCharacterController *larg1, int larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  int arg2 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setUpAxis(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setWalkDirection (btKinematicCharacterController *larg1, btVector3 *larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btVector3 *arg2 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setWalkDirection((btVector3 const &)*arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setVelocityForTimeInterval (btKinematicCharacterController *larg1, btVector3 *larg2, btScalar larg3) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btVector3 *arg2 = 0 ;
+  btScalar arg3 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->setVelocityForTimeInterval((btVector3 const &)*arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_reset (btKinematicCharacterController *larg1, btCollisionWorld *larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btCollisionWorld *arg2 = (btCollisionWorld *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->reset(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_warp (btKinematicCharacterController *larg1, btVector3 *larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btVector3 *arg2 = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->warp((btVector3 const &)*arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_preStep (btKinematicCharacterController *larg1, btCollisionWorld *larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btCollisionWorld *arg2 = (btCollisionWorld *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->preStep(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_playerStep (btKinematicCharacterController *larg1, btCollisionWorld *larg2, btScalar larg3) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btCollisionWorld *arg2 = (btCollisionWorld *) 0 ;
+  btScalar arg3 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->playerStep(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setFallSpeed (btKinematicCharacterController *larg1, btScalar larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btScalar arg2 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setFallSpeed(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setJumpSpeed (btKinematicCharacterController *larg1, btScalar larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btScalar arg2 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setJumpSpeed(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setMaxJumpHeight (btKinematicCharacterController *larg1, btScalar larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btScalar arg2 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setMaxJumpHeight(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btKinematicCharacterController_canJump (btKinematicCharacterController *larg1) {
+  int lresult = (int)0 ;
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  bool result;
+  
+  arg1 = larg1;
+  try {
+    result = (bool)((btKinematicCharacterController const *)arg1)->canJump();
+    lresult = (int)result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_jump (btKinematicCharacterController *larg1) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    (arg1)->jump();
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setGravity (btKinematicCharacterController *larg1, btScalar larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btScalar arg2 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setGravity(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btScalar _wrap_btKinematicCharacterController_getGravity (btKinematicCharacterController *larg1) {
+  btScalar lresult = (btScalar)0 ;
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btScalar result;
+  
+  arg1 = larg1;
+  try {
+    result = (btScalar)((btKinematicCharacterController const *)arg1)->getGravity();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btScalar)0;
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setMaxSlope (btKinematicCharacterController *larg1, btScalar larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btScalar arg2 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setMaxSlope(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btScalar _wrap_btKinematicCharacterController_getMaxSlope (btKinematicCharacterController *larg1) {
+  btScalar lresult = (btScalar)0 ;
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btScalar result;
+  
+  arg1 = larg1;
+  try {
+    result = (btScalar)((btKinematicCharacterController const *)arg1)->getMaxSlope();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btScalar)0;
+  }
+}
+
+
+EXPORT btPairCachingGhostObject *_wrap_btKinematicCharacterController_getGhostObject (btKinematicCharacterController *larg1) {
+  btPairCachingGhostObject * lresult = (btPairCachingGhostObject *)0 ;
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  btPairCachingGhostObject *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btPairCachingGhostObject *)(arg1)->getGhostObject();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btPairCachingGhostObject *)0;
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setUseGhostSweepTest (btKinematicCharacterController *larg1, int larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  bool arg2 ;
+  
+  arg1 = larg1;
+  arg2 = (bool)larg2;
+  try {
+    (arg1)->setUseGhostSweepTest(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btKinematicCharacterController_onGround (btKinematicCharacterController *larg1) {
+  int lresult = (int)0 ;
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  bool result;
+  
+  arg1 = larg1;
+  try {
+    result = (bool)((btKinematicCharacterController const *)arg1)->onGround();
+    lresult = (int)result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT void _wrap_btKinematicCharacterController_setUpInterpolate (btKinematicCharacterController *larg1, int larg2) {
+  btKinematicCharacterController *arg1 = (btKinematicCharacterController *) 0 ;
+  bool arg2 ;
+  
+  arg1 = larg1;
+  arg2 = (bool)larg2;
+  try {
+    (arg1)->setUpInterpolate(arg2);
     
   } catch (...) {
     

@@ -172,11 +172,11 @@ void main() {
   (init-bullet)
 
   (setf sphere-alist
-	(alexandria:with-input-from-file (s "/home/bbeer/work/lisp/sphere.lisp")
+	(alexandria:with-input-from-file (s "/home/brad/work/lisp/sphere.lisp")
 	  (read s)))
 
   (setf plane-alist
-	(alexandria:with-input-from-file (s "/home/bbeer/work/lisp/plane.lisp")
+	(alexandria:with-input-from-file (s "/home/brad/work/lisp/plane.lisp")
 	  (read s)))
 
 
