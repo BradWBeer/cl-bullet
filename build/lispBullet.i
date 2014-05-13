@@ -1,4 +1,4 @@
-%module swigbullet
+%module lispBullet
   
 %{
 #include <BulletSoftBody/btSoftBody.h>
@@ -151,6 +151,10 @@ typedef btSoftBody::Node Node;
 %rename (stepSimulation2) btDiscreteDynamicsWorld::stepSimulation(btScalar timeStep, int maxSubSteps);
 %rename (stepSimulation1) btDiscreteDynamicsWorld::stepSimulation(btScalar timeStep);
 
+%rename (btKinematicCharacterController4) btKinematicCharacterController::btKinematicCharacterController(btPairCachingGhostObject *larg1, btConvexShape *larg2, btScalar larg3, int larg4);
+%rename (btKinematicCharacterController3) btKinematicCharacterController::btKinematicCharacterController(btPairCachingGhostObject *larg1, btConvexShape *larg2, btScalar larg3);
+
+
 
 
 //btSoftBody nested classes
@@ -262,6 +266,7 @@ struct Node : Feature
 %include "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h" 
 %include "BulletCollision/BroadphaseCollision/btDbvtBroadphase.h" 
 /* %include "BulletCollision/BroadphaseCollision/btDispatcher.h" */
+%include "BulletCollision/BroadphaseCollision/btOverlappingPairCache.h"
 
 %include "BulletCollision/CollisionDispatch/btCollisionConfiguration.h"
 %include "BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h"

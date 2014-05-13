@@ -1545,6 +1545,292 @@
 (cffi:defcfun ("_wrap_btDbvtBroadphase_benchmark" btDbvtBroadphase_benchmark) :void
   (arg0 :pointer))
 
+(cffi:defcstruct btOverlapCallback
+	(processOverlap :pointer))
+
+(cffi:defcstruct btOverlapFilterCallback
+	(needBroadphaseCollision :pointer))
+
+(cffi:defcvar ("gRemovePairs" gRemovePairs)
+ :int)
+
+(cffi:defcvar ("gAddedPairs" gAddedPairs)
+ :int)
+
+(cffi:defcvar ("gFindPairs" gFindPairs)
+ :int)
+
+(cffi:defcvar ("BT_NULL_PAIR" BT_NULL_PAIR)
+ :int)
+
+(cffi:defcfun ("_wrap_delete_btOverlappingPairCache" delete_btOverlappingPairCache) :void
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_0" btOverlappingPairCache_getOverlappingPairArrayPtr) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_1" btOverlappingPairCache_getOverlappingPairArrayPtr) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_getOverlappingPairArray" btOverlappingPairCache_getOverlappingPairArray) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_cleanOverlappingPair" btOverlappingPairCache_cleanOverlappingPair) :void
+  (self :pointer)
+  (pair :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_getNumOverlappingPairs" btOverlappingPairCache_getNumOverlappingPairs) :int
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_cleanProxyFromPairs" btOverlappingPairCache_cleanProxyFromPairs) :void
+  (self :pointer)
+  (proxy :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_setOverlapFilterCallback" btOverlappingPairCache_setOverlapFilterCallback) :void
+  (self :pointer)
+  (callback :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_processAllOverlappingPairs" btOverlappingPairCache_processAllOverlappingPairs) :void
+  (self :pointer)
+  (arg1 :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_findPair" btOverlappingPairCache_findPair) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_hasDeferredRemoval" btOverlappingPairCache_hasDeferredRemoval) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_setInternalGhostPairCallback" btOverlappingPairCache_setInternalGhostPairCallback) :void
+  (self :pointer)
+  (ghostPairCallback :pointer))
+
+(cffi:defcfun ("_wrap_btOverlappingPairCache_sortOverlappingPairs" btOverlappingPairCache_sortOverlappingPairs) :void
+  (self :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_new_btHashedOverlappingPairCache" new_btHashedOverlappingPairCache) :pointer)
+
+(cffi:defcfun ("_wrap_delete_btHashedOverlappingPairCache" delete_btHashedOverlappingPairCache) :void
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_removeOverlappingPairsContainingProxy" btHashedOverlappingPairCache_removeOverlappingPairsContainingProxy) :void
+  (self :pointer)
+  (proxy :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_removeOverlappingPair" btHashedOverlappingPairCache_removeOverlappingPair) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_needsBroadphaseCollision" btHashedOverlappingPairCache_needsBroadphaseCollision) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_addOverlappingPair" btHashedOverlappingPairCache_addOverlappingPair) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_cleanProxyFromPairs" btHashedOverlappingPairCache_cleanProxyFromPairs) :void
+  (self :pointer)
+  (proxy :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_processAllOverlappingPairs" btHashedOverlappingPairCache_processAllOverlappingPairs) :void
+  (self :pointer)
+  (arg1 :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_0" btHashedOverlappingPairCache_getOverlappingPairArrayPtr) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_1" btHashedOverlappingPairCache_getOverlappingPairArrayPtr) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_getOverlappingPairArray__SWIG_0" btHashedOverlappingPairCache_getOverlappingPairArray) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_getOverlappingPairArray__SWIG_1" btHashedOverlappingPairCache_getOverlappingPairArray) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_cleanOverlappingPair" btHashedOverlappingPairCache_cleanOverlappingPair) :void
+  (self :pointer)
+  (pair :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_findPair" btHashedOverlappingPairCache_findPair) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_GetCount" btHashedOverlappingPairCache_GetCount) :int
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_getOverlapFilterCallback" btHashedOverlappingPairCache_getOverlapFilterCallback) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_setOverlapFilterCallback" btHashedOverlappingPairCache_setOverlapFilterCallback) :void
+  (self :pointer)
+  (callback :pointer))
+
+(cffi:defcfun ("_wrap_btHashedOverlappingPairCache_getNumOverlappingPairs" btHashedOverlappingPairCache_getNumOverlappingPairs) :int
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_new_btSortedOverlappingPairCache" new_btSortedOverlappingPairCache) :pointer)
+
+(cffi:defcfun ("_wrap_delete_btSortedOverlappingPairCache" delete_btSortedOverlappingPairCache) :void
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_processAllOverlappingPairs" btSortedOverlappingPairCache_processAllOverlappingPairs) :void
+  (self :pointer)
+  (arg1 :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_removeOverlappingPair" btSortedOverlappingPairCache_removeOverlappingPair) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_cleanOverlappingPair" btSortedOverlappingPairCache_cleanOverlappingPair) :void
+  (self :pointer)
+  (pair :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_addOverlappingPair" btSortedOverlappingPairCache_addOverlappingPair) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_findPair" btSortedOverlappingPairCache_findPair) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_cleanProxyFromPairs" btSortedOverlappingPairCache_cleanProxyFromPairs) :void
+  (self :pointer)
+  (proxy :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_removeOverlappingPairsContainingProxy" btSortedOverlappingPairCache_removeOverlappingPairsContainingProxy) :void
+  (self :pointer)
+  (proxy :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_needsBroadphaseCollision" btSortedOverlappingPairCache_needsBroadphaseCollision) :pointer
+  (self :pointer)
+  (proxy0 :pointer)
+  (proxy1 :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_getOverlappingPairArray__SWIG_0" btSortedOverlappingPairCache_getOverlappingPairArray) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_getOverlappingPairArray__SWIG_1" btSortedOverlappingPairCache_getOverlappingPairArray) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_0" btSortedOverlappingPairCache_getOverlappingPairArrayPtr) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_1" btSortedOverlappingPairCache_getOverlappingPairArrayPtr) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_getNumOverlappingPairs" btSortedOverlappingPairCache_getNumOverlappingPairs) :int
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_getOverlapFilterCallback" btSortedOverlappingPairCache_getOverlapFilterCallback) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_setOverlapFilterCallback" btSortedOverlappingPairCache_setOverlapFilterCallback) :void
+  (self :pointer)
+  (callback :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_hasDeferredRemoval" btSortedOverlappingPairCache_hasDeferredRemoval) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_setInternalGhostPairCallback" btSortedOverlappingPairCache_setInternalGhostPairCallback) :void
+  (self :pointer)
+  (ghostPairCallback :pointer))
+
+(cffi:defcfun ("_wrap_btSortedOverlappingPairCache_sortOverlappingPairs" btSortedOverlappingPairCache_sortOverlappingPairs) :void
+  (self :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_getOverlappingPairArrayPtr__SWIG_0" btNullPairCache_getOverlappingPairArrayPtr) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_getOverlappingPairArrayPtr__SWIG_1" btNullPairCache_getOverlappingPairArrayPtr) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_getOverlappingPairArray" btNullPairCache_getOverlappingPairArray) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_cleanOverlappingPair" btNullPairCache_cleanOverlappingPair) :void
+  (self :pointer)
+  (arg1 :pointer)
+  (arg2 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_getNumOverlappingPairs" btNullPairCache_getNumOverlappingPairs) :int
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_cleanProxyFromPairs" btNullPairCache_cleanProxyFromPairs) :void
+  (self :pointer)
+  (arg1 :pointer)
+  (arg2 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_setOverlapFilterCallback" btNullPairCache_setOverlapFilterCallback) :void
+  (self :pointer)
+  (arg1 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_processAllOverlappingPairs" btNullPairCache_processAllOverlappingPairs) :void
+  (self :pointer)
+  (arg1 :pointer)
+  (arg2 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_findPair" btNullPairCache_findPair) :pointer
+  (self :pointer)
+  (arg1 :pointer)
+  (arg2 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_hasDeferredRemoval" btNullPairCache_hasDeferredRemoval) :pointer
+  (self :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_setInternalGhostPairCallback" btNullPairCache_setInternalGhostPairCallback) :void
+  (self :pointer)
+  (arg1 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_addOverlappingPair" btNullPairCache_addOverlappingPair) :pointer
+  (self :pointer)
+  (arg1 :pointer)
+  (arg2 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_removeOverlappingPair" btNullPairCache_removeOverlappingPair) :pointer
+  (self :pointer)
+  (arg1 :pointer)
+  (arg2 :pointer)
+  (arg3 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_removeOverlappingPairsContainingProxy" btNullPairCache_removeOverlappingPairsContainingProxy) :void
+  (self :pointer)
+  (arg1 :pointer)
+  (arg2 :pointer))
+
+(cffi:defcfun ("_wrap_btNullPairCache_sortOverlappingPairs" btNullPairCache_sortOverlappingPairs) :void
+  (self :pointer)
+  (dispatcher :pointer))
+
+(cffi:defcfun ("_wrap_new_btNullPairCache" new_btNullPairCache) :pointer)
+
+(cffi:defcfun ("_wrap_delete_btNullPairCache" delete_btNullPairCache) :void
+  (self :pointer))
+
 (cffi:defcfun ("_wrap_delete_btCollisionConfiguration" delete_btCollisionConfiguration) :void
   (self :pointer))
 
@@ -3941,13 +4227,13 @@
 	(m_additionalDamping :int)
 	(m_padding :pointer))
 
-(cffi:defcfun ("_wrap_new_btKinematicCharacterController__SWIG_0" new_btKinematicCharacterController) :pointer
+(cffi:defcfun ("_wrap_new_btKinematicCharacterController4" new_btKinematicCharacterController4) :pointer
   (ghostObject :pointer)
   (convexShape :pointer)
   (stepHeight :float)
   (upAxis :int))
 
-(cffi:defcfun ("_wrap_new_btKinematicCharacterController__SWIG_1" new_btKinematicCharacterController) :pointer
+(cffi:defcfun ("_wrap_new_btKinematicCharacterController3" new_btKinematicCharacterController3) :pointer
   (ghostObject :pointer)
   (convexShape :pointer)
   (stepHeight :float))

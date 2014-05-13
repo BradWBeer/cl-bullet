@@ -6107,6 +6107,1135 @@ EXPORT void _wrap_btDbvtBroadphase_benchmark (btBroadphaseInterface *larg1) {
 }
 
 
+EXPORT void _wrap_delete_btOverlappingPairCache (btOverlappingPairCache *larg1) {
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_0 (btOverlappingPairCache *larg1) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePair *)(arg1)->getOverlappingPairArrayPtr();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_1 (btOverlappingPairCache *larg1) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePair *)((btOverlappingPairCache const *)arg1)->getOverlappingPairArrayPtr();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT btBroadphasePairArray *_wrap_btOverlappingPairCache_getOverlappingPairArray (btOverlappingPairCache *larg1) {
+  btBroadphasePairArray * lresult = (btBroadphasePairArray *)0 ;
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btBroadphasePairArray *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePairArray *) &(arg1)->getOverlappingPairArray();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePairArray *)0;
+  }
+}
+
+
+EXPORT void _wrap_btOverlappingPairCache_cleanOverlappingPair (btOverlappingPairCache *larg1, btBroadphasePair *larg2, btDispatcher *larg3) {
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btBroadphasePair *arg2 = 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->cleanOverlappingPair(*arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btOverlappingPairCache_getNumOverlappingPairs (btOverlappingPairCache *larg1) {
+  int lresult = (int)0 ;
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btOverlappingPairCache const *)arg1)->getNumOverlappingPairs();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT void _wrap_btOverlappingPairCache_cleanProxyFromPairs (btOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->cleanProxyFromPairs(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btOverlappingPairCache_setOverlapFilterCallback (btOverlappingPairCache *larg1, btOverlapFilterCallback *larg2) {
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btOverlapFilterCallback *arg2 = (btOverlapFilterCallback *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setOverlapFilterCallback(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btOverlappingPairCache_processAllOverlappingPairs (btOverlappingPairCache *larg1, btOverlapCallback *larg2, btDispatcher *larg3) {
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btOverlapCallback *arg2 = (btOverlapCallback *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->processAllOverlappingPairs(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btOverlappingPairCache_findPair (btOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btBroadphasePair *)(arg1)->findPair(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT int _wrap_btOverlappingPairCache_hasDeferredRemoval (btOverlappingPairCache *larg1) {
+  int lresult = (int)0 ;
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  bool result;
+  
+  arg1 = larg1;
+  try {
+    result = (bool)(arg1)->hasDeferredRemoval();
+    lresult = (int)result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT void _wrap_btOverlappingPairCache_setInternalGhostPairCallback (btOverlappingPairCache *larg1, btOverlappingPairCallback *larg2) {
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btOverlappingPairCallback *arg2 = (btOverlappingPairCallback *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setInternalGhostPairCallback(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btOverlappingPairCache_sortOverlappingPairs (btOverlappingPairCache *larg1, btDispatcher *larg2) {
+  btOverlappingPairCache *arg1 = (btOverlappingPairCache *) 0 ;
+  btDispatcher *arg2 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->sortOverlappingPairs(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btHashedOverlappingPairCache *_wrap_new_btHashedOverlappingPairCache () {
+  btHashedOverlappingPairCache * lresult = (btHashedOverlappingPairCache *)0 ;
+  btHashedOverlappingPairCache *result = 0 ;
+  
+  try {
+    result = (btHashedOverlappingPairCache *)new btHashedOverlappingPairCache();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btHashedOverlappingPairCache *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btHashedOverlappingPairCache (btHashedOverlappingPairCache *larg1) {
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btHashedOverlappingPairCache_removeOverlappingPairsContainingProxy (btHashedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->removeOverlappingPairsContainingProxy(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void *_wrap_btHashedOverlappingPairCache_removeOverlappingPair (btHashedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3, btDispatcher *larg4) {
+  void * lresult = (void *)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg4 = (btDispatcher *) 0 ;
+  void *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    result = (void *)(arg1)->removeOverlappingPair(arg2,arg3,arg4);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (void *)0;
+  }
+}
+
+
+EXPORT int _wrap_btHashedOverlappingPairCache_needsBroadphaseCollision (btHashedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  int lresult = (int)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  bool result;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (bool)((btHashedOverlappingPairCache const *)arg1)->needsBroadphaseCollision(arg2,arg3);
+    lresult = (int)result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btHashedOverlappingPairCache_addOverlappingPair (btHashedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btBroadphasePair *)(arg1)->addOverlappingPair(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT void _wrap_btHashedOverlappingPairCache_cleanProxyFromPairs (btHashedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->cleanProxyFromPairs(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btHashedOverlappingPairCache_processAllOverlappingPairs (btHashedOverlappingPairCache *larg1, btOverlapCallback *larg2, btDispatcher *larg3) {
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btOverlapCallback *arg2 = (btOverlapCallback *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->processAllOverlappingPairs(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btHashedOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_0 (btHashedOverlappingPairCache *larg1) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePair *)(arg1)->getOverlappingPairArrayPtr();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btHashedOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_1 (btHashedOverlappingPairCache *larg1) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePair *)((btHashedOverlappingPairCache const *)arg1)->getOverlappingPairArrayPtr();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT btBroadphasePairArray *_wrap_btHashedOverlappingPairCache_getOverlappingPairArray__SWIG_0 (btHashedOverlappingPairCache *larg1) {
+  btBroadphasePairArray * lresult = (btBroadphasePairArray *)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphasePairArray *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePairArray *) &(arg1)->getOverlappingPairArray();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePairArray *)0;
+  }
+}
+
+
+EXPORT btBroadphasePairArray *_wrap_btHashedOverlappingPairCache_getOverlappingPairArray__SWIG_1 (btHashedOverlappingPairCache *larg1) {
+  btBroadphasePairArray * lresult = (btBroadphasePairArray *)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphasePairArray *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePairArray *) &((btHashedOverlappingPairCache const *)arg1)->getOverlappingPairArray();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePairArray *)0;
+  }
+}
+
+
+EXPORT void _wrap_btHashedOverlappingPairCache_cleanOverlappingPair (btHashedOverlappingPairCache *larg1, btBroadphasePair *larg2, btDispatcher *larg3) {
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphasePair *arg2 = 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->cleanOverlappingPair(*arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btHashedOverlappingPairCache_findPair (btHashedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btBroadphasePair *)(arg1)->findPair(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT int _wrap_btHashedOverlappingPairCache_GetCount (btHashedOverlappingPairCache *larg1) {
+  int lresult = (int)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btHashedOverlappingPairCache const *)arg1)->GetCount();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT btOverlapFilterCallback *_wrap_btHashedOverlappingPairCache_getOverlapFilterCallback (btHashedOverlappingPairCache *larg1) {
+  btOverlapFilterCallback * lresult = (btOverlapFilterCallback *)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btOverlapFilterCallback *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btOverlapFilterCallback *)(arg1)->getOverlapFilterCallback();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btOverlapFilterCallback *)0;
+  }
+}
+
+
+EXPORT void _wrap_btHashedOverlappingPairCache_setOverlapFilterCallback (btHashedOverlappingPairCache *larg1, btOverlapFilterCallback *larg2) {
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  btOverlapFilterCallback *arg2 = (btOverlapFilterCallback *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setOverlapFilterCallback(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btHashedOverlappingPairCache_getNumOverlappingPairs (btHashedOverlappingPairCache *larg1) {
+  int lresult = (int)0 ;
+  btHashedOverlappingPairCache *arg1 = (btHashedOverlappingPairCache *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btHashedOverlappingPairCache const *)arg1)->getNumOverlappingPairs();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT btSortedOverlappingPairCache *_wrap_new_btSortedOverlappingPairCache () {
+  btSortedOverlappingPairCache * lresult = (btSortedOverlappingPairCache *)0 ;
+  btSortedOverlappingPairCache *result = 0 ;
+  
+  try {
+    result = (btSortedOverlappingPairCache *)new btSortedOverlappingPairCache();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btSortedOverlappingPairCache *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btSortedOverlappingPairCache (btSortedOverlappingPairCache *larg1) {
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSortedOverlappingPairCache_processAllOverlappingPairs (btSortedOverlappingPairCache *larg1, btOverlapCallback *larg2, btDispatcher *larg3) {
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btOverlapCallback *arg2 = (btOverlapCallback *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->processAllOverlappingPairs(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void *_wrap_btSortedOverlappingPairCache_removeOverlappingPair (btSortedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3, btDispatcher *larg4) {
+  void * lresult = (void *)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg4 = (btDispatcher *) 0 ;
+  void *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    result = (void *)(arg1)->removeOverlappingPair(arg2,arg3,arg4);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (void *)0;
+  }
+}
+
+
+EXPORT void _wrap_btSortedOverlappingPairCache_cleanOverlappingPair (btSortedOverlappingPairCache *larg1, btBroadphasePair *larg2, btDispatcher *larg3) {
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphasePair *arg2 = 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->cleanOverlappingPair(*arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btSortedOverlappingPairCache_addOverlappingPair (btSortedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btBroadphasePair *)(arg1)->addOverlappingPair(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btSortedOverlappingPairCache_findPair (btSortedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btBroadphasePair *)(arg1)->findPair(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT void _wrap_btSortedOverlappingPairCache_cleanProxyFromPairs (btSortedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->cleanProxyFromPairs(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSortedOverlappingPairCache_removeOverlappingPairsContainingProxy (btSortedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->removeOverlappingPairsContainingProxy(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btSortedOverlappingPairCache_needsBroadphaseCollision (btSortedOverlappingPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  int lresult = (int)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  bool result;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (bool)((btSortedOverlappingPairCache const *)arg1)->needsBroadphaseCollision(arg2,arg3);
+    lresult = (int)result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT btBroadphasePairArray *_wrap_btSortedOverlappingPairCache_getOverlappingPairArray__SWIG_0 (btSortedOverlappingPairCache *larg1) {
+  btBroadphasePairArray * lresult = (btBroadphasePairArray *)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphasePairArray *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePairArray *) &(arg1)->getOverlappingPairArray();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePairArray *)0;
+  }
+}
+
+
+EXPORT btBroadphasePairArray *_wrap_btSortedOverlappingPairCache_getOverlappingPairArray__SWIG_1 (btSortedOverlappingPairCache *larg1) {
+  btBroadphasePairArray * lresult = (btBroadphasePairArray *)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphasePairArray *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePairArray *) &((btSortedOverlappingPairCache const *)arg1)->getOverlappingPairArray();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePairArray *)0;
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btSortedOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_0 (btSortedOverlappingPairCache *larg1) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePair *)(arg1)->getOverlappingPairArrayPtr();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btSortedOverlappingPairCache_getOverlappingPairArrayPtr__SWIG_1 (btSortedOverlappingPairCache *larg1) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePair *)((btSortedOverlappingPairCache const *)arg1)->getOverlappingPairArrayPtr();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT int _wrap_btSortedOverlappingPairCache_getNumOverlappingPairs (btSortedOverlappingPairCache *larg1) {
+  int lresult = (int)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btSortedOverlappingPairCache const *)arg1)->getNumOverlappingPairs();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT btOverlapFilterCallback *_wrap_btSortedOverlappingPairCache_getOverlapFilterCallback (btSortedOverlappingPairCache *larg1) {
+  btOverlapFilterCallback * lresult = (btOverlapFilterCallback *)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btOverlapFilterCallback *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btOverlapFilterCallback *)(arg1)->getOverlapFilterCallback();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btOverlapFilterCallback *)0;
+  }
+}
+
+
+EXPORT void _wrap_btSortedOverlappingPairCache_setOverlapFilterCallback (btSortedOverlappingPairCache *larg1, btOverlapFilterCallback *larg2) {
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btOverlapFilterCallback *arg2 = (btOverlapFilterCallback *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setOverlapFilterCallback(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btSortedOverlappingPairCache_hasDeferredRemoval (btSortedOverlappingPairCache *larg1) {
+  int lresult = (int)0 ;
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  bool result;
+  
+  arg1 = larg1;
+  try {
+    result = (bool)(arg1)->hasDeferredRemoval();
+    lresult = (int)result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT void _wrap_btSortedOverlappingPairCache_setInternalGhostPairCallback (btSortedOverlappingPairCache *larg1, btOverlappingPairCallback *larg2) {
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btOverlappingPairCallback *arg2 = (btOverlappingPairCallback *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setInternalGhostPairCallback(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btSortedOverlappingPairCache_sortOverlappingPairs (btSortedOverlappingPairCache *larg1, btDispatcher *larg2) {
+  btSortedOverlappingPairCache *arg1 = (btSortedOverlappingPairCache *) 0 ;
+  btDispatcher *arg2 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->sortOverlappingPairs(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btNullPairCache_getOverlappingPairArrayPtr__SWIG_0 (btNullPairCache *larg1) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePair *)(arg1)->getOverlappingPairArrayPtr();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btNullPairCache_getOverlappingPairArrayPtr__SWIG_1 (btNullPairCache *larg1) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePair *)((btNullPairCache const *)arg1)->getOverlappingPairArrayPtr();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT btBroadphasePairArray *_wrap_btNullPairCache_getOverlappingPairArray (btNullPairCache *larg1) {
+  btBroadphasePairArray * lresult = (btBroadphasePairArray *)0 ;
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphasePairArray *result = 0 ;
+  
+  arg1 = larg1;
+  try {
+    result = (btBroadphasePairArray *) &(arg1)->getOverlappingPairArray();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePairArray *)0;
+  }
+}
+
+
+EXPORT void _wrap_btNullPairCache_cleanOverlappingPair (btNullPairCache *larg1, btBroadphasePair *larg2, btDispatcher *larg3) {
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphasePair *arg2 = 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->cleanOverlappingPair(*arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT int _wrap_btNullPairCache_getNumOverlappingPairs (btNullPairCache *larg1) {
+  int lresult = (int)0 ;
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  int result;
+  
+  arg1 = larg1;
+  try {
+    result = (int)((btNullPairCache const *)arg1)->getNumOverlappingPairs();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT void _wrap_btNullPairCache_cleanProxyFromPairs (btNullPairCache *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->cleanProxyFromPairs(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btNullPairCache_setOverlapFilterCallback (btNullPairCache *larg1, btOverlapFilterCallback *larg2) {
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btOverlapFilterCallback *arg2 = (btOverlapFilterCallback *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setOverlapFilterCallback(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btNullPairCache_processAllOverlappingPairs (btNullPairCache *larg1, btOverlapCallback *larg2, btDispatcher *larg3) {
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btOverlapCallback *arg2 = (btOverlapCallback *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->processAllOverlappingPairs(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btNullPairCache_findPair (btNullPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btBroadphasePair *)(arg1)->findPair(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT int _wrap_btNullPairCache_hasDeferredRemoval (btNullPairCache *larg1) {
+  int lresult = (int)0 ;
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  bool result;
+  
+  arg1 = larg1;
+  try {
+    result = (bool)(arg1)->hasDeferredRemoval();
+    lresult = (int)result;
+    return lresult;
+  } catch (...) {
+    return (int)0;
+  }
+}
+
+
+EXPORT void _wrap_btNullPairCache_setInternalGhostPairCallback (btNullPairCache *larg1, btOverlappingPairCallback *larg2) {
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btOverlappingPairCallback *arg2 = (btOverlappingPairCallback *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->setInternalGhostPairCallback(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btBroadphasePair *_wrap_btNullPairCache_addOverlappingPair (btNullPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3) {
+  btBroadphasePair * lresult = (btBroadphasePair *)0 ;
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btBroadphasePair *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    result = (btBroadphasePair *)(arg1)->addOverlappingPair(arg2,arg3);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btBroadphasePair *)0;
+  }
+}
+
+
+EXPORT void *_wrap_btNullPairCache_removeOverlappingPair (btNullPairCache *larg1, btBroadphaseProxy *larg2, btBroadphaseProxy *larg3, btDispatcher *larg4) {
+  void * lresult = (void *)0 ;
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btBroadphaseProxy *arg3 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg4 = (btDispatcher *) 0 ;
+  void *result = 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  arg4 = larg4;
+  try {
+    result = (void *)(arg1)->removeOverlappingPair(arg2,arg3,arg4);
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (void *)0;
+  }
+}
+
+
+EXPORT void _wrap_btNullPairCache_removeOverlappingPairsContainingProxy (btNullPairCache *larg1, btBroadphaseProxy *larg2, btDispatcher *larg3) {
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btBroadphaseProxy *arg2 = (btBroadphaseProxy *) 0 ;
+  btDispatcher *arg3 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  arg3 = larg3;
+  try {
+    (arg1)->removeOverlappingPairsContainingProxy(arg2,arg3);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT void _wrap_btNullPairCache_sortOverlappingPairs (btNullPairCache *larg1, btDispatcher *larg2) {
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  btDispatcher *arg2 = (btDispatcher *) 0 ;
+  
+  arg1 = larg1;
+  arg2 = larg2;
+  try {
+    (arg1)->sortOverlappingPairs(arg2);
+    
+  } catch (...) {
+    
+  }
+}
+
+
+EXPORT btNullPairCache *_wrap_new_btNullPairCache () {
+  btNullPairCache * lresult = (btNullPairCache *)0 ;
+  btNullPairCache *result = 0 ;
+  
+  try {
+    result = (btNullPairCache *)new btNullPairCache();
+    lresult = result;
+    return lresult;
+  } catch (...) {
+    return (btNullPairCache *)0;
+  }
+}
+
+
+EXPORT void _wrap_delete_btNullPairCache (btNullPairCache *larg1) {
+  btNullPairCache *arg1 = (btNullPairCache *) 0 ;
+  
+  arg1 = larg1;
+  try {
+    delete arg1;
+    
+  } catch (...) {
+    
+  }
+}
+
+
 EXPORT void _wrap_delete_btCollisionConfiguration (btCollisionConfiguration *larg1) {
   btCollisionConfiguration *arg1 = (btCollisionConfiguration *) 0 ;
   
@@ -15140,7 +16269,7 @@ EXPORT void _wrap_btRigidBody_serializeSingleObject (btRigidBody *larg1, btSeria
 }
 
 
-EXPORT btKinematicCharacterController *_wrap_new_btKinematicCharacterController__SWIG_0 (btPairCachingGhostObject *larg1, btConvexShape *larg2, btScalar larg3, int larg4) {
+EXPORT btKinematicCharacterController *_wrap_new_btKinematicCharacterController4 (btPairCachingGhostObject *larg1, btConvexShape *larg2, btScalar larg3, int larg4) {
   btKinematicCharacterController * lresult = (btKinematicCharacterController *)0 ;
   btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
   btConvexShape *arg2 = (btConvexShape *) 0 ;
@@ -15162,7 +16291,7 @@ EXPORT btKinematicCharacterController *_wrap_new_btKinematicCharacterController_
 }
 
 
-EXPORT btKinematicCharacterController *_wrap_new_btKinematicCharacterController__SWIG_1 (btPairCachingGhostObject *larg1, btConvexShape *larg2, btScalar larg3) {
+EXPORT btKinematicCharacterController *_wrap_new_btKinematicCharacterController3 (btPairCachingGhostObject *larg1, btConvexShape *larg2, btScalar larg3) {
   btKinematicCharacterController * lresult = (btKinematicCharacterController *)0 ;
   btPairCachingGhostObject *arg1 = (btPairCachingGhostObject *) 0 ;
   btConvexShape *arg2 = (btConvexShape *) 0 ;

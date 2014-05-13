@@ -66,6 +66,8 @@
 
 (defclass Overlapping-Pair-Callback (c-class) ())
 
+(defclass Ghost-Pair-Callback (Overlapping-Pair-Callback) ())
+
 (defclass Overlapping-Pair-Cache (Overlapping-Pair-Callback) ())
 
 (defclass Soft-Body-Solver (c-class) ())
@@ -226,6 +228,15 @@
 
 ;; (cl:defmethod initialize-instance :after ((obj dbvt-broadphase) (pc Overlapping-Pair-Cache) &key)
 ;;   (setf (slot-value obj 'ff-pointer) (cl-bullet-bindings::new_btDbvtBroadphase_pairche (ff-pointer p)))j)
+
+(cl:defmethod initialize-instance ((this Ghost-Pair-Callback) &key)
+  (unless (slot-value this 'ff-pointer)
+    (setf (slot-value this 'ff-pointer) (cl-bullet-bindings::new_btGhostPairCallback))))
+
+(cl:defmethod destroy ((this Ghost-Pair-Callback) &key)
+  (cl-bullet-bindings::delete_btGhostPairCallback (slot-value this 'ff-pointer))
+  (setf (slot-value this 'ff-pointer) nil))
+
 
 (cl:defmethod initialize-instance :after ((this dbvt-broadphase) &key)
   (unless (slot-value this 'ff-pointer)
@@ -445,6 +456,12 @@
 		 :ff-pointer (cl-bullet-bindings::btTransform_getOrigin (slot-value this 'ff-pointer))))
 
 
+(cl:defmethod set-origin ((this Transform) (position vector3))
+  (make-instance 'vector3
+		 :ff-pointer (cl-bullet-bindings::btTransform_setOrigin (slot-value this 'ff-pointer)
+									(slot-value position 'ff-pointer))))
+
+
 (defmethod get-opengl-matrix ((this Transform))
   (sb-cga:transpose-matrix
    (apply #'sb-cga:matrix 
@@ -571,3 +588,65 @@
 (cl:defmethod set-collision-flags ((this collision-object) flags &key)
   (cl-bullet-bindings::btCollisionObject_setCollisionFlags (slot-value this 'ff-pointer) flags))
 
+
+(cl:defmethod get-world-transform ((this collision-object) (trans transform))
+  (make-instance 'cl-bullet::transform
+		 :transform (cl-bullet-bindings::btCollisionObject_getWorldTransform (slot-value this 'ff-pointer))))
+
+
+(cl:defmethod set-world-transform ((this collision-object) (trans transform))
+  (cl-bullet-bindings::btCollisionObject_setWorldTransform (slot-value this 'ff-pointer)
+							   (slot-value trans 'ff-pointer)))
+
+
+(cl:defmethod set-collision-shape ((this collision-object) (shape collision-shape))
+  (cl-bullet-bindings::btCollisionObject_setCollisionShape (slot-value this 'ff-pointer)
+							   (slot-value shape 'ff-pointer)))
+							   
+
+(cl:defmethod initialize-instance :after ((this Pair-Caching-Ghost-Object) &key )
+  (unless (slot-value this 'ff-pointer)
+    (setf (slot-value this 'ff-pointer) (cl-bullet-bindings::new_btPairCachingGhostObject))))
+
+
+(cl:defmethod destroy ((this Pair-Caching-Ghost-Object) &key)
+  (cl-bullet-bindings::delete_btPairCachingGhostObject (slot-value this 'ff-pointer))
+  (setf (slot-value this 'ff-pointer) nil))
+
+
+(cl:defmethod get-overlapping-pair-cache ((this Broadphase-Interface)) 
+  (make-instance 'Overlapping-Pair-Cache
+		:ff-pointer (cl-bullet-bindings::btBroadphaseInterface_getOverlappingPairCache (slot-value this 'ff-pointer))))
+
+
+(cl:defmethod get-overlapping-pair-cache ((this DBVT-Broadphase)) 
+  (make-instance 'Overlapping-Pair-Cache
+		:ff-pointer (cl-bullet-bindings::btDbvtBroadphase_getOverlappingPairCache (slot-value this 'ff-pointer))))
+
+(cl:defmethod get-overlapping-pair-cache ((this Pair-Caching-Ghost-Object)) 
+  (make-instance 'Overlapping-Pair-Cache
+		:ff-pointer (cl-bullet-bindings::btPairCachingGhostObject_getOverlappingPairCache (slot-value this 'ff-pointer))))
+
+
+(cl:defmethod set-internal-ghost-pair-callback ((this overlapping-pair-cache) (ghost ghost-pair-callback))
+  (cl-bullet-bindings::btOverlappingPairCache_setInternalGhostPairCallback (slot-value this 'ff-pointer)
+									   (slot-value ghost 'ff-pointer)))
+
+
+(cl:defmethod initialize-instance :after ((this kinematic-character-controller) &key convex-shape step-height up-axis)
+  (unless (slot-value this 'ff-pointer)
+    
+    (if (and convex-shape step-height)
+	(when up-axis
+	  (setf (slot-value this 'ff-pointer) 
+		(cl-bullet-bindings::new_btKinematicCharacterController4
+		 (slot-value this 'ff-pointer)
+		 (slot-value convex-shape 'ff-pointer)
+		 step-height
+		 up-axis)))
+
+	(setf (slot-value this 'ff-pointer) 
+	      (cl-bullet-bindings::new_btKinematicCharacterController3
+	       (slot-value this 'ff-pointer)
+	       (slot-value convex-shape 'ff-pointer)
+	       step-height)))))

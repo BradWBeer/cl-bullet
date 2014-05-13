@@ -1,4 +1,4 @@
-TARGET   = swigBullet
+TARGET   = lispBullet
 CC       = g++
 CFLAGS   = -O3
 LDFLAGS  = -shared -static  
@@ -16,9 +16,9 @@ $(TARGET): $(TARGET).o
 	$(CC) $(LIBS) -o $@.so $^ $(LDFLAGS)
 
 $(TARGET).o $(LRAW): $(TARGET).cpp
-	sed -i 's/( :pointer)/(_ :pointer)/g' swigbullet.lisp
-	sed -i '7i(in-package #:cl-bullet-bindings)' swigbullet.lisp
-	cp swigbullet.lisp ../bindings/bullet-bindings.lisp
+	sed -i 's/( :pointer)/(_ :pointer)/g' $(TARGET).lisp
+	sed -i '7i(in-package #:cl-bullet-bindings)' $(TARGET).lisp
+	cp $(TARGET).lisp ../bindings/bullet-bindings.lisp
 	$(CC) $(INCLUDES) -c $(CFLAGS) $<
 
 
@@ -28,4 +28,4 @@ $(TARGET).cpp: $(TARGET).i
 .PHONY: clean cleanest
 
 clean: 
-	rm $(TARGET) $(TARGET).o $(TARGET).cpp
+	rm $(TARGET).o $(TARGET).cpp $(TARGET).so
