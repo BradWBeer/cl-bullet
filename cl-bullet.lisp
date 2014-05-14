@@ -90,7 +90,7 @@
 
 (defclass Soft-Body-Collision-Shape  (Concave-Shape) ())
 
-(defclass Convex-Shape (c-class) ())
+(defclass Convex-Shape (Collision-Shape) ())
 
 (defclass Convex-Internal-Shape (Convex-Shape) ())
 
@@ -229,7 +229,7 @@
 ;; (cl:defmethod initialize-instance :after ((obj dbvt-broadphase) (pc Overlapping-Pair-Cache) &key)
 ;;   (setf (slot-value obj 'ff-pointer) (cl-bullet-bindings::new_btDbvtBroadphase_pairche (ff-pointer p)))j)
 
-(cl:defmethod initialize-instance ((this Ghost-Pair-Callback) &key)
+(cl:defmethod initialize-instance :after ((this Ghost-Pair-Callback) &key)
   (unless (slot-value this 'ff-pointer)
     (setf (slot-value this 'ff-pointer) (cl-bullet-bindings::new_btGhostPairCallback))))
 
@@ -633,20 +633,25 @@
 									   (slot-value ghost 'ff-pointer)))
 
 
-(cl:defmethod initialize-instance :after ((this kinematic-character-controller) &key convex-shape step-height up-axis)
+(cl:defmethod initialize-instance :after ((this kinematic-character-controller) &key ghost-object convex-shape step-height up-axis)
   (unless (slot-value this 'ff-pointer)
     
-    (if (and convex-shape step-height)
-	(when up-axis
-	  (setf (slot-value this 'ff-pointer) 
-		(cl-bullet-bindings::new_btKinematicCharacterController4
-		 (slot-value this 'ff-pointer)
-		 (slot-value convex-shape 'ff-pointer)
-		 step-height
-		 up-axis)))
+    (if (and ghost-object convex-shape step-height)
+	(if up-axis
+	    (setf (slot-value this 'ff-pointer) 
+		  (cl-bullet-bindings::new_btKinematicCharacterController4
+		   (slot-value ghost-object 'ff-pointer)
+		   (slot-value convex-shape 'ff-pointer)
+		   step-height
+		   up-axis))
+	
+	    (setf (slot-value this 'ff-pointer) 
+		  (cl-bullet-bindings::new_btKinematicCharacterController3
+		   (slot-value ghost-object 'ff-pointer)
+		   (slot-value convex-shape 'ff-pointer)
+		   step-height)))
+	(error "Can not create kinematic-character-controller with this data!"))))
 
-	(setf (slot-value this 'ff-pointer) 
-	      (cl-bullet-bindings::new_btKinematicCharacterController3
-	       (slot-value this 'ff-pointer)
-	       (slot-value convex-shape 'ff-pointer)
-	       step-height)))))
+(cl:defmethod destroy ((this kinematic-character-controller) &key)
+  (cl-bullet-bindings::delete_btKinematicCharacterController (slot-value this 'ff-pointer))
+  (setf (slot-value this 'ff-pointer) nil))
